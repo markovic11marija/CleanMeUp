@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CleanMeUp.Domain.Model
+{
+   public class Item
+    {
+        public ClothesType ClothesType { get; set; }
+        public ServiceType ServiceType { get; set; }
+        public string AdditionalComment { get; set; }
+        public Image Image { get; set; }
+    }
+}

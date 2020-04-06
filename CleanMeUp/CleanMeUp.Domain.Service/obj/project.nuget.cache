@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "OVg6AlQ87K9MazoQAccA11hUhp/HPljhX8arDyiBl3YrYmwE+Xlmdq8Uj6ny07l9PjhUlMCEUpKItFZ5uuWLuw==",
+  "success": true,
+  "projectFilePath": "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Service\\CleanMeUp.Domain.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marija.markovic\\.nuget\\packages\\mediatr\\8.0.1\\mediatr.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

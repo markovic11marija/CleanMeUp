@@ -1,0 +1,3 @@
+﻿EntityFrameworkCore\Add-Migration -Project CleanMeUp.Infrastructure.Data.Ef -StartUpProject CleanMeUp.WebApi -Context CleanMeUpDbContext -o Migrations -Name Initial
+
+EntityFrameworkCore\Update-Database -Project CleanMeUp.Infrastructure.Data.Ef -StartUpProject CleanMeUp.WebApi -Context CleanMeUpDbContext

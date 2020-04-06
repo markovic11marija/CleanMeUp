@@ -1,0 +1,82 @@
+using System;
+using Autofac;
+using CleanMeUp.Domain.Service;
+using CleanMeUp.Infrastructure.Autofac;
+using CleanMeUp.Infrastructure.Data.Ef;
+using CleanMeUp.WebApi.Filters;
+using MediatR;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Swashbuckle.AspNetCore.Swagger;
+
+namespace CleanMeUp.WebApi
+{
+    public class Startup
+    {
+        private readonly ILoggerFactory _loggerFactory;
+        private readonly IHostingEnvironment _env;
+
+        public Startup(IConfiguration configuration, ILoggerFactory loggerFactory, IHostingEnvironment env)
+        {
+            Configuration = configuration;
+            _loggerFactory = loggerFactory;
+            _env = env;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new HandleExceptionsFilter(_env.IsDevelopment(),
+                     _loggerFactory.CreateLogger<HandleExceptionsFilter>()));
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info { Title = "HotelsReviewApp.Api", Version = "V1" }); });
+
+            services.AddCors(); //Cross-Origin Resource Sharing sa kojih domena mogu requesti na moj api
+            services.AddDbContext<CleanMeUpDbContext>();
+
+            services.AddMediatR(
+                typeof(CommandResult<>).Assembly
+            );
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app,  IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CleanMeUp.WebApi");
+                c.RoutePrefix = String.Empty;
+            });
+
+
+            app.UseMvc();
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule<EntityFrameworkModule>();
+        }
+    }
+}

@@ -1,0 +1,8 @@
+D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.deps.json
+D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.dll
+D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.pdb
+D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.csproj.CoreCompileInputs.cache
+D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.AssemblyInfoInputs.cache
+D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.AssemblyInfo.cs
+D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.dll
+D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.pdb
