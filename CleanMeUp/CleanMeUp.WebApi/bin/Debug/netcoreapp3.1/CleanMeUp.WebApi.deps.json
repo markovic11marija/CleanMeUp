@@ -26,7 +26,6 @@
         "dependencies": {
           "Autofac": "5.1.2",
           "Autofac.Extensions.DependencyInjection": "6.0.0",
-          "CleanMeUp.Domain.Model": "1.0.0",
           "CleanMeUp.Domain.Service": "1.0.0",
           "CleanMeUp.Infrastructure": "1.0.0",
           "CleanMeUp.Infrastructure.Data.Ef": "1.0.0",

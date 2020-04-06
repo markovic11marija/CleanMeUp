@@ -13,4 +13,8 @@
     <ProjectReference Include="..\CleanMeUp.Infrastructure.Data\CleanMeUp.Infrastructure.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>

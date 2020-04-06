@@ -3,10 +3,10 @@ using Autofac;
 using CleanMeUp.Domain.Service;
 using CleanMeUp.Infrastructure.Autofac;
 using CleanMeUp.Infrastructure.Data.Ef;
-using CleanMeUp.WebApi.Filters;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,14 +17,9 @@ namespace CleanMeUp.WebApi
 {
     public class Startup
     {
-        private readonly ILoggerFactory _loggerFactory;
-        private readonly IHostingEnvironment _env;
-
-        public Startup(IConfiguration configuration, ILoggerFactory loggerFactory, IHostingEnvironment env)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            _loggerFactory = loggerFactory;
-            _env = env;
         }
 
         public IConfiguration Configuration { get; }
@@ -32,11 +27,8 @@ namespace CleanMeUp.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(options =>
-            {
-                options.Filters.Add(new HandleExceptionsFilter(_env.IsDevelopment(),
-                     _loggerFactory.CreateLogger<HandleExceptionsFilter>()));
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info { Title = "HotelsReviewApp.Api", Version = "V1" }); });
 
             services.AddCors(); //Cross-Origin Resource Sharing sa kojih domena mogu requesti na moj api
@@ -71,7 +63,15 @@ namespace CleanMeUp.WebApi
             });
 
 
-            app.UseMvc();
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("Hello World!");
+                });
+            });
         }
 
         public void ConfigureContainer(ContainerBuilder builder)

@@ -6632,7 +6632,6 @@
     ".NETCoreApp,Version=v3.1": [
       "Autofac >= 5.1.2",
       "Autofac.Extensions.DependencyInjection >= 6.0.0",
-      "CleanMeUp.Domain.Model >= 1.0.0",
       "CleanMeUp.Domain.Service >= 1.0.0",
       "CleanMeUp.Infrastructure >= 1.0.0",
       "CleanMeUp.Infrastructure.Data.Ef >= 1.0.0",
@@ -6670,9 +6669,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj": {
-              "projectPath": "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj"
-            },
             "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Service\\CleanMeUp.Domain.Service.csproj": {
               "projectPath": "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Service\\CleanMeUp.Domain.Service.csproj"
             },

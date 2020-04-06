@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanMeUp.Domain.Model\CleanMeUp.Domain.Model.csproj" />
     <ProjectReference Include="..\CleanMeUp.Domain.Service\CleanMeUp.Domain.Service.csproj" />
     <ProjectReference Include="..\CleanMeUp.Infrastructure.Data.Ef\CleanMeUp.Infrastructure.Data.Ef.csproj" />
     <ProjectReference Include="..\CleanMeUp.Infrastructure\CleanMeUp.Infrastructure.csproj" />

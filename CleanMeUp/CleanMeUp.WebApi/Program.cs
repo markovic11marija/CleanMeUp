@@ -1,7 +1,6 @@
 using System;
 using Autofac.Extensions.DependencyInjection;
 using CleanMeUp.Infrastructure.Data.Ef;
-using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -13,18 +12,20 @@ namespace CleanMeUp.WebApi
     {
         public static void Main(string[] args)
         {
-            var host = CreateWebHostBuilder(args).Build();
+            var host = CreateHostBuilder(args).Build();
             InitializeDb(host);
             host.Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .ConfigureKestrel(options => options.AddServerHeader = false)
-                .ConfigureServices(services => services.AddAutofac())
-                .UseStartup<Startup>();
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+           Host.CreateDefaultBuilder(args)
+               .ConfigureServices(services => services.AddAutofac())
+               .ConfigureWebHostDefaults(webBuilder =>
+               {
+                   webBuilder.UseStartup<Startup>();
+               });
 
-        private static void InitializeDb(IWebHost host)
+        private static void InitializeDb(IHost host)
         {
             using (IServiceScope scope = host.Services.CreateScope())
             {
