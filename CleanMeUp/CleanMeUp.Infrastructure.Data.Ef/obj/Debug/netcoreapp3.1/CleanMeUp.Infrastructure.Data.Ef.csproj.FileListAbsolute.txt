@@ -11,4 +11,7 @@ D:\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\
 D:\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.pdb
 D:\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.dll
 D:\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.pdb
+D:\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.runtimeconfig.json
+D:\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.runtimeconfig.dev.json
 D:\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.csproj.CoreCompileInputs.cache
+D:\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.genruntimeconfig.cache

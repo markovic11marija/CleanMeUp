@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace CleanMeUp.WebApi
@@ -29,7 +30,10 @@ namespace CleanMeUp.WebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
-            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info { Title = "HotelsReviewApp.Api", Version = "V1" }); });
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CleanMeUp.WebApi", Version = "v1" });
+            });
 
             services.AddCors(); //Cross-Origin Resource Sharing sa kojih domena mogu requesti na moj api
             services.AddDbContext<CleanMeUpDbContext>();
@@ -40,9 +44,9 @@ namespace CleanMeUp.WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app,  IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app,  IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (env.EnvironmentName == "Development")
             {
                 app.UseDeveloperExceptionPage();
             }
@@ -55,6 +59,7 @@ namespace CleanMeUp.WebApi
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

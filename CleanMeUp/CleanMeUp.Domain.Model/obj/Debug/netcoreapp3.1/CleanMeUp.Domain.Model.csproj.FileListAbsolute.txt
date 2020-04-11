@@ -6,3 +6,4 @@ D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.
 D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.AssemblyInfo.cs
 D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.dll
 D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.pdb
+D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.csprojAssemblyReference.cache

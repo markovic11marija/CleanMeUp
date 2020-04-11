@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CleanMeUp.Domain.Model
 {
-   public class Item
+   public class Item:Entity
     {
         public ClothesType ClothesType { get; set; }
         public ServiceType ServiceType { get; set; }
