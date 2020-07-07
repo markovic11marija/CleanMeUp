@@ -6,5 +6,6 @@
         public ServiceType ServiceType { get; set; }
         public string AdditionalComment { get; set; }
         public Image Image { get; set; }
+        public decimal Price { get; set; }
     }
 }
