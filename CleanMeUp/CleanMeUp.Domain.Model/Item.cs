@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CleanMeUp.Domain.Model
+﻿namespace CleanMeUp.Domain.Model
 {
-   public class Item:Entity
+    public class Item:Entity
     {
         public ClothesType ClothesType { get; set; }
         public ServiceType ServiceType { get; set; }

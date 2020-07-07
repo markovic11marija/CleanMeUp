@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CleanMeUp.Domain.Model
+﻿namespace CleanMeUp.Domain.Model
 {
-   public enum ClothesType
+    public enum ClothesType
     {
         None = 0,
         Shirt = 1,
