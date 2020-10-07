@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3dcFuQwykTsvD6VLXNJbYN1OzGkZSsNvoB4mlDlAsM0QYHnsQmRlD4xxDdtrEK8U6avrvIGkm874xPs74ND8NQ==",
+  "dgSpecHash": "M0eNoHvkhMiS9PqTKCMp1zPcHu6IUV2k/j7FFlzZCd4JWS9zqtf2q7aAzTVR9wwFV2m9e6PcNzIJATXY/7dmpw==",
   "success": true,
-  "projectFilePath": "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure\\CleanMeUp.Infrastructure.csproj",
+  "projectFilePath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure\\CleanMeUp.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marija.markovic\\.nuget\\packages\\autofac\\5.1.2\\autofac.5.1.2.nupkg.sha512",
     "C:\\Users\\marija.markovic\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",

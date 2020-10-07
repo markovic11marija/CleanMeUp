@@ -8,14 +8,9 @@ namespace CleanMeUp.Domain.Service
     public class AddOrderCommand : IRequest<CommandResult<CommandEmptyResult>>
     {
         public IList<Item> Items { get; set; }
-        public Address PickUpAddress { get; set; }
-        public Address DeliveryAddress { get; set; }
-
-        AddOrderCommand(IList<Item> items, Address pickUpAddress, Address deliveryAddress) {
-            Items = items;
-            PickUpAddress = pickUpAddress;
-            DeliveryAddress = deliveryAddress;
-        }
+        public string PickUpAddress { get; set; }
+        public string DeliveryAddress { get; set; }
+        public string Phone { get; set; }
 
     }
 }

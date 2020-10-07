@@ -7,3 +7,12 @@ D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.
 D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.dll
 D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.pdb
 D:\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.csprojAssemblyReference.cache
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.deps.json
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.dll
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.pdb
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.csprojAssemblyReference.cache
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.csproj.CoreCompileInputs.cache
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.AssemblyInfoInputs.cache
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.AssemblyInfo.cs
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.dll
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Model\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.pdb

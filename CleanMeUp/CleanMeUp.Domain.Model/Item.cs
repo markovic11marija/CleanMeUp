@@ -2,10 +2,8 @@
 {
     public class Item:Entity
     {
-        public ClothesType ClothesType { get; set; }
-        public ServiceType ServiceType { get; set; }
-        public string AdditionalComment { get; set; }
-        public Image Image { get; set; }
+        public string Name { get; set; }
+        public int Count { get; set; }
         public decimal Price { get; set; }
     }
 }
