@@ -140,3 +140,6 @@ D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.WebApi\obj\Debug\netcoreapp3.1\staticwebass
 D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.WebApi\obj\Debug\netcoreapp3.1\CleanMeUp.WebApi.dll
 D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.WebApi\obj\Debug\netcoreapp3.1\CleanMeUp.WebApi.pdb
 D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.WebApi\obj\Debug\netcoreapp3.1\CleanMeUp.WebApi.genruntimeconfig.cache
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.WebApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.WebApi\bin\Debug\netcoreapp3.1\SendGrid.dll
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.WebApi\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll

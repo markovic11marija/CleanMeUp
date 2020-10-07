@@ -24,7 +24,7 @@ namespace CleanMeUp.Domain.Service
 
         public async Task<CommandResult<CommandEmptyResult>> Handle(AddOrderCommand request, CancellationToken cancellationToken)
         {
-            var order = new Order { Items = request.Items, DeliveryAddress = request.DeliveryAddress, PickUpAddress = request.PickUpAddress };
+            var order = new Order { Items = request.Items, DeliveryAddress = request.DeliveryAddress, PickUpAddress = request.PickUpAddress, Phone = request.Phone };
             _orderRepository.Add(order);
             _unitOfWork.SaveChanges();
 

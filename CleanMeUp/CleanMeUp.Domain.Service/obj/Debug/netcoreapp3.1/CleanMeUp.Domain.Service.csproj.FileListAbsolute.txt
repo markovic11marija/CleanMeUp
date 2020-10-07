@@ -25,3 +25,4 @@ D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\Clea
 D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.csproj.CopyComplete
 D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.dll
 D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.pdb
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.csproj.CoreCompileInputs.cache
