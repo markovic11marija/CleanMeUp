@@ -23,7 +23,7 @@ namespace CleanMeUp.Domain.Service.SendGrid
         {
             var apiKey = _configuration.GetSection("SENDGRID_API_KEY").Value;
             var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("order@cleanmeup.rs", "Clean me up");
+            var from = new EmailAddress("orderinfo@cleanmeup.rs", "Clean me up");
             var subject = "Novi zahtev";
             var to = new EmailAddress("info@cleanmeup.rs", "Clean me up");
             var plainTextContent = "";
