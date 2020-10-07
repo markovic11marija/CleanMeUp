@@ -1,0 +1,23 @@
+.headerBtns {
+  align-items: flex-end;
+}
+.header {
+  color: #ffffff !important;
+}
+.cardContainer {
+  margin-top: 10%;
+  margin-left: 10%;
+  width: 50%;
+  height: 30%;
+}
+.input {
+  margin: 0.5rem;
+  margin-left: 0;
+  border-radius: 0.2rem;
+  border: 0;
+  padding-left: 0.2rem;
+}
+.btn {
+  background-color: blue($color: #000000);
+  color: "#82E5F2";
+}
