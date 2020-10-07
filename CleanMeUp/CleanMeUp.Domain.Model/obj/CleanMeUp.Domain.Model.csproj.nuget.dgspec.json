@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj": {}
+    "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj": {}
   },
   "projects": {
-    "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj": {
+    "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj",
+        "projectUniqueName": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj",
         "projectName": "CleanMeUp.Domain.Model",
-        "projectPath": "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj",
+        "projectPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj",
         "packagesPath": "C:\\Users\\marija.markovic\\.nuget\\packages\\",
-        "outputPath": "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\obj\\",
+        "outputPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

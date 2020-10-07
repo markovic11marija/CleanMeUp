@@ -1,16 +1,14 @@
 ﻿using CleanMeUp.Domain.Model;
 using CleanMeUp.Infrastructure.Data;
 using MediatR;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace CleanMeUp.Domain.Service.Price
 {
-  public  class GetAllPricesQueryHandler : IRequestHandler<GetAllPricesQuery, IList<PriceList>>
+    public  class GetAllPricesQueryHandler : IRequestHandler<GetAllPricesQuery, IList<PriceList>>
     {
         private readonly IRepository<PriceList> _priceListRepository;
 

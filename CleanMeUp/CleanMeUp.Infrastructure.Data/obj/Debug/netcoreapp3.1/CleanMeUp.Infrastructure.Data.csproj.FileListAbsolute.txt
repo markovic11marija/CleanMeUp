@@ -10,3 +10,15 @@ D:\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\obj\Debug\netcoreapp3.1\Cle
 D:\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.csproj.CopyComplete
 D:\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.dll
 D:\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.pdb
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.deps.json
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.dll
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.pdb
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.dll
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.pdb
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.csprojAssemblyReference.cache
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.csproj.CoreCompileInputs.cache
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.AssemblyInfoInputs.cache
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.AssemblyInfo.cs
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.csproj.CopyComplete
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.dll
+D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.pdb

@@ -4987,11 +4987,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj",
+      "projectUniqueName": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj",
       "projectName": "CleanMeUp.Infrastructure.Data.Ef",
-      "projectPath": "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj",
+      "projectPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj",
       "packagesPath": "C:\\Users\\marija.markovic\\.nuget\\packages\\",
-      "outputPath": "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\obj\\",
+      "outputPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5010,8 +5010,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj": {
-              "projectPath": "D:\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj"
+            "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj": {
+              "projectPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj"
             }
           }
         }
