@@ -27,7 +27,7 @@ namespace CleanMeUp.Domain.Service.SendGrid
             var subject = "Novi zahtev";
             var to = new EmailAddress("info@cleanmeup.rs", "Clean me up");
             var plainTextContent = "";
-            var htmlContent = $"<div><p><b>Detalji zahteva</b></p></div><body><div><p>Adresa dostavu: {_order.DeliveryAddress }</p><p>Adresa za preuzimanje: {_order.PickUpAddress}</p><p>Telefon: {_order.Phone }</p><p>Datum: { DateTime.Now : dd/MM/yyyy HH:mm:ss}</p></div></body>";
+            var htmlContent = $"<div><p><b>Detalji zahteva</b></p></div><body><div><p>Adresa dostavu: {_order.DeliveryAddress }</p><p>Adresa za preuzimanje: {_order.PickUpAddress}</p><p>Telefon: {_order.Phone }</p><p>Datum: { DateTime.Now : dd/MM/yyyy HH:mm:ss}</p>{_order.ReturnItems()}</div></body>";
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
             var response = await client.SendEmailAsync(msg);
             if (response.StatusCode == HttpStatusCode.Accepted)
