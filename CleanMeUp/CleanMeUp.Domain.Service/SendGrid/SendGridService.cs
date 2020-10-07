@@ -24,11 +24,10 @@ namespace CleanMeUp.Domain.Service.SendGrid
             var apiKey = _configuration.GetSection("SENDGRID_API_KEY").Value;
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress("order@cleanmeup.rs", "Clean me up");
-            var subject = "Zahtev za ciscenjem ";
+            var subject = "Novi zahtev";
             var to = new EmailAddress("info@cleanmeup.rs", "Clean me up");
             var plainTextContent = "";
-            //   var htmlContent = $"<div><p><b>Zahtev za voznju</b></p></div><body><div><p>Od: {_order.LocationFrom}</p><p>Do: {_ride.LocationTo}</p><p>Pocetak: {_ride.StartTime }</p><p>Trajanje: {_ride.Duration}</p><p>Datum: {_ride.Date:dd-MM-yyyy}</p><p>Kontakt: {_ride.Contact}</p></div></body>";
-            var htmlContent = "<div><p><b>Zahtev za ciscenje</b></p></div>";
+            var htmlContent = $"<div><p><b>Detalji zahteva</b></p></div><body><div><p>Adresa dostavu: {_order.DeliveryAddress }</p><p>Adresa za preuzimanje: {_order.PickUpAddress}</p><p>Telefon: {_order.Phone }</p><p>Datum: { DateTime.Now : dd/MM/yyyy HH:mm:ss}</p></div></body>";
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
             var response = await client.SendEmailAsync(msg);
             if (response.StatusCode == HttpStatusCode.Accepted)
