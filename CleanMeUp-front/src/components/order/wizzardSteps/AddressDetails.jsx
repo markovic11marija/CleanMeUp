@@ -36,12 +36,15 @@ const AddressDetails = (props) => {
         <br />
         <Button
           onClick={() => {
-            postOrder(dispatch, {
+            let order = {
               ...props.order,
               pickUpAddress: form.current["AdresaSkupljanja"].value,
               deliveryAddress: form.current["AdresaDostave"].value,
               phone: form.current["Telefon"].value,
-            });
+            };
+            postOrder(dispatch, order);
+            props.setOrder(order);
+            props.nextStep();
           }}
         >
           Naruci

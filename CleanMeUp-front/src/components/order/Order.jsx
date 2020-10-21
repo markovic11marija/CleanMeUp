@@ -3,6 +3,7 @@ import StepWizard from "react-step-wizard";
 import OrderDetails from "./wizzardSteps/OrderDetails";
 import AddressDetails from "./wizzardSteps/AddressDetails";
 import Header from "../homepage/Header";
+import Review from "../payment/Review";
 
 const Order = () => {
   const [order, setOrder] = useState({ items: [] });
@@ -14,6 +15,7 @@ const Order = () => {
           <StepWizard>
             <OrderDetails setOrder={setOrder} order={order} />
             <AddressDetails setOrder={setOrder} order={order} />
+            <Review order={order} />
           </StepWizard>
         </div>
       </div>
