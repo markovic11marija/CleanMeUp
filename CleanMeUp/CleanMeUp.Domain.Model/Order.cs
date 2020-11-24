@@ -8,6 +8,7 @@ namespace CleanMeUp.Domain.Model
         public string PickUpAddress { get; set; }
         public string DeliveryAddress { get; set; }
         public string Phone { get; set; }
+        public string BankReferenceId { get; set; }
 
 
         public string ReturnItems() {
@@ -15,7 +16,7 @@ namespace CleanMeUp.Domain.Model
 
             for (int i = 0; i < Items.Count; i++)
             {
-                items += $"<p><ul><li>Br stavke: {Items[i].Id }</li><li>Naziv stvke: {Items[i].Name }</li><li>Količina: {Items[i].Count }</li><li>Cena: {Items[i].Price }</li></ul></p>";
+                items += $"<p><ul><li>Br stavke: { i+1 }</li><li>Naziv stvke: {Items[i].Name }</li><li>Količina: {Items[i].Count }</li><li>Cena: {Items[i].Price }</li></ul></p>";
             }
 
             return items;

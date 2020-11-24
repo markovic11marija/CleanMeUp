@@ -9,29 +9,24 @@ using System.Threading.Tasks;
 
 namespace CleanMeUp.Domain.Service
 {
-    public class AddOrderCommandHandler : IRequestHandler<AddOrderCommand, CommandResult<CommandEmptyResult>>
+    public class AddOrderCommandHandler : IRequestHandler<AddOrderCommand, CommandResult<int>>
     {
-        private readonly IRepository<Order> _orderRepository;
+        private readonly IRepository<Model.Order> _orderRepository;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IConfiguration _configuration;
 
-        public AddOrderCommandHandler(IRepository<Order> orderRepository, IUnitOfWork unitOfWork, IConfiguration configuration)
+        public AddOrderCommandHandler(IRepository<Model.Order> orderRepository, IUnitOfWork unitOfWork)
         {
             _orderRepository = orderRepository;
             _unitOfWork = unitOfWork;
-            _configuration = configuration;
         }
 
-        public async Task<CommandResult<CommandEmptyResult>> Handle(AddOrderCommand request, CancellationToken cancellationToken)
+        public async Task<CommandResult<int>> Handle(AddOrderCommand request, CancellationToken cancellationToken)
         {
-            var order = new Order { Items = request.Items, DeliveryAddress = request.DeliveryAddress, PickUpAddress = request.PickUpAddress, Phone = request.Phone };
+            var order = new Model.Order { Items = request.Items, DeliveryAddress = request.DeliveryAddress, PickUpAddress = request.PickUpAddress, Phone = request.Phone };
             _orderRepository.Add(order);
             _unitOfWork.SaveChanges();
 
-            var sendGrid = new SendGridService(order, _configuration);
-            await sendGrid.SendMailAsync();
-
-            return await Task.FromResult(CommandResult<CommandEmptyResult>.Success(new CommandEmptyResult()));
+            return await Task.FromResult(CommandResult<int>.Success(order.Id));
         }
     }
 }

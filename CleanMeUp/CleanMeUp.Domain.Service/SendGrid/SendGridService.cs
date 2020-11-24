@@ -11,10 +11,10 @@ namespace CleanMeUp.Domain.Service.SendGrid
 {
     public class SendGridService
     {
-        private readonly Order _order;
+        private readonly Model.Order _order;
         private readonly IConfiguration _configuration;
 
-        public SendGridService(Order order, IConfiguration configuration)
+        public SendGridService(Model.Order order, IConfiguration configuration)
         {
             _order = order;
             _configuration = configuration;
@@ -23,11 +23,11 @@ namespace CleanMeUp.Domain.Service.SendGrid
         {
             var apiKey = _configuration.GetSection("SENDGRID_API_KEY").Value;
             var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("orderinfo@cleanmeup.rs", "Clean me up");
+            var from = new EmailAddress("orderinformation@cleanmeup.rs", "Clean me up");
             var subject = "Novi zahtev";
             var to = new EmailAddress("info@cleanmeup.rs", "Clean me up");
             var plainTextContent = "";
-            var htmlContent = $"<div><p><b>Detalji zahteva</b></p></div><body><div><p>Adresa dostavu: {_order.DeliveryAddress }</p><p>Adresa za preuzimanje: {_order.PickUpAddress}</p><p>Telefon: {_order.Phone }</p><p>Datum: { DateTime.Now : dd/MM/yyyy HH:mm:ss}</p>{_order.ReturnItems()}</div></body>";
+            var htmlContent = $"<div><p><b>Detalji zahteva</b></p></div><body><div><p>Adresa dostavu: {_order.DeliveryAddress }</p><p>Adresa za preuzimanje: {_order.PickUpAddress}</p><p>Telefon: {_order.Phone }</p><p>Datum: { DateTime.Now : dd/MM/yyyy HH:mm:ss}</p><p>ReferencaBanke: {_order.BankReferenceId}</p><p>Stavke: </p>{_order.ReturnItems()}</div></body>";
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
             var response = await client.SendEmailAsync(msg);
             if (response.StatusCode == HttpStatusCode.Accepted)
