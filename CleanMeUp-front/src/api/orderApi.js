@@ -1,11 +1,17 @@
-import { getData, postData, deleteData } from "./api";
+import { postData } from "./api";
+import {
+  postOrderStarted,
+  postOrderSuccess,
+  postOrderError,
+} from "../actions/orderActions";
 
-export function postOrder(dispatch, employeeEmail) {
+export function postOrder(dispatch, order) {
   postData({
     dispatch,
-    startActionType: scheduleFetchStarted,
-    successActionType: scheduleFetchSuccess,
-    errorActionType: scheduleFetchError,
-    url: `${GetSchedule}${employeeEmail}`,
+    startActionType: postOrderStarted,
+    successActionType: postOrderSuccess,
+    errorActionType: postOrderError,
+    url: `Order`,
+    data: order,
   });
 }

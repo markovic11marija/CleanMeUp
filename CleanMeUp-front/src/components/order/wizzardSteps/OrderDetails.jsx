@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import OrderCounter from "./OrderCounter";
 import { Button, Col, Row } from "react-bootstrap";
 
@@ -10,24 +10,45 @@ const OrderDetails = (props) => {
       <div className={"orderContainer"}>
         <Row>
           <Col>
-            <OrderCounter name={"Farmerke"} price={1200} />
+            <OrderCounter
+              name={"Farmerke"}
+              setOrder={props.setOrder}
+              order={props.order}
+              price={1200}
+            />
           </Col>
           <Col>
-            <OrderCounter name={"Dzemper"} price={600} />
+            <OrderCounter
+              name={"Dzemper"}
+              setOrder={props.setOrder}
+              order={props.order}
+              price={600}
+            />
           </Col>
           <Col>
-            <OrderCounter name={"Majice"} price={600} />
+            <OrderCounter
+              setOrder={props.setOrder}
+              order={props.order}
+              name={"Majice"}
+              price={600}
+            />
           </Col>
         </Row>
       </div>
       <h5>Usluga koju zelite</h5>
-      <input type="checkbox" />
+      <input name={"Hemijsko"} type="checkbox" />
       <span>Hemijsko ciscenje</span>
-      <input type="checkbox" />
+      <input name={"Pranje"} type="checkbox" />
       <span>Pranje</span>
-      <input type="checkbox" />
+      <input name={"PranjePeglanje"} type="checkbox" />
       <span>Pranje i peglanje</span>
-      <Button onClick={props.nextStep}>Next</Button>
+      <Button
+        onClick={() => {
+          props.nextStep();
+        }}
+      >
+        Next
+      </Button>
     </div>
   );
 };

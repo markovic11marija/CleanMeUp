@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import StepWizard from "react-step-wizard";
 import OrderDetails from "./wizzardSteps/OrderDetails";
 import AddressDetails from "./wizzardSteps/AddressDetails";
-import Header from "../homepage/Header"
+import Header from "../homepage/Header";
+import Review from "../payment/Review";
 
 const Order = () => {
+  const [order, setOrder] = useState({ items: [] });
   return (
     <>
       <Header />
       <div className="image">
         <div className="cardContainer transparent">
           <StepWizard>
-            <OrderDetails/>
-            <AddressDetails />
+            <OrderDetails setOrder={setOrder} order={order} />
+            <AddressDetails setOrder={setOrder} order={order} />
+            <Review order={order} />
           </StepWizard>
         </div>
       </div>
