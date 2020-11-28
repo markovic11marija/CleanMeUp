@@ -1,6 +1,7 @@
 ﻿using CleanMeUp.Domain.Model;
 using CleanMeUp.Infrastructure.Data;
 using CleanMeUp.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
@@ -28,9 +29,10 @@ namespace CleanMeUp.Services.Implementation
         {
              try
             {
-                _orderRepository.Add(model);
+                var order = new Order { Items = model.Items, DeliveryAddress = model.DeliveryAddress, PickUpAddress = model.PickUpAddress, Phone = model.Phone };
+                _orderRepository.Add(order);
                 _unitOfWork.SaveChanges();
-                return 1;
+                return order.Id;
             }
             catch (Exception ex)
             {
