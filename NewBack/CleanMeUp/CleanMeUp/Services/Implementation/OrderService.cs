@@ -24,18 +24,19 @@ namespace CleanMeUp.Services.Implementation
             _unitOfWork = unitOfWork;
             _sengridService = sengridService;
         }
-        public async Task<int> AddOrder(Order model)
+        public Task<int> AddOrder(Order model)
         {
              try
             {
+                
                 _orderRepository.Add(model);
-                _unitOfWork.SaveChanges();
-                return 1;
+                 _unitOfWork.SaveChanges();
+                return Task.FromResult(1);
             }
             catch (Exception ex)
             {
                 _logger.LogError("Error",ex);
-                return 0;
+                return Task.FromResult(0);
             }
         }
 

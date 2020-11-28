@@ -30,14 +30,14 @@ namespace CleanMeUp
 
             services.AddDbContext<CleanMeUpDbContext>( b => b.UseSqlServer(Configuration.GetConnectionString("CleanMeUpDbContext")));
 
-            services.AddScoped(typeof(DbContext), typeof(CleanMeUpDbContext));
+           // services.AddScoped(typeof(DbContext), typeof(CleanMeUpDbContext));
             services.AddScoped(typeof(IRepository<>), typeof(EntityFrameworkRepository<>));
-            services.AddScoped(typeof(IUnitOfWork), typeof(DbContextUnitOfWork));
+            services.AddScoped<IUnitOfWork, DbContextUnitOfWork>();
 
-            services.AddTransient<IOrderService,OrderService>();
-            services.AddTransient<IPriceListService, PriceListService>();
-            services.AddTransient<ISengridService, SendGridService>();
-            services.AddTransient<ISigninService,SigninService>();
+            services.AddScoped<IOrderService,OrderService>();
+            services.AddScoped<IPriceListService, PriceListService>();
+            services.AddScoped<ISengridService, SendGridService>();
+            services.AddScoped<ISigninService,SigninService>();
            
 
             services.AddSwaggerGen(c =>
