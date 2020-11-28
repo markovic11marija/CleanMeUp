@@ -22,7 +22,7 @@ namespace CleanMeUp.Controllers
         {
             var result = await _orderService.AddOrder(model);
 
-            if (result == 1)
+            if (result > 0)
                 return Ok(result);
 
             return BadRequest(result);
