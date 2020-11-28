@@ -43,6 +43,7 @@ const OrderDetails = (props) => {
       <input name={"PranjePeglanje"} type="checkbox" />
       <span>Pranje i peglanje</span>
       <Button
+        disabled={!props.order.items.length}
         onClick={() => {
           props.nextStep();
         }}

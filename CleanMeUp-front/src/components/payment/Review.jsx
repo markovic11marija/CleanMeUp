@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
+import { useSelector } from "react-redux";
+import { Button } from "react-bootstrap";
+
 const Review = (props) => {
-  console.log(props);
   const [amount, setAmount] = useState();
+  const { order } = useSelector((state) => state.orderReducer);
 
   useEffect(() => {
     let result = 0;
@@ -14,7 +17,18 @@ const Review = (props) => {
 
   return (
     <div>
-      <label>Amount</label> <input defaultValue={amount} />
+      <h3>Pregled Porudzbine:</h3>
+      {props.order.items.map((item, i) => {
+        return (
+          <div key={`item-${i}`}>
+            <h6>
+              {item.name} - x{item.count}
+            </h6>
+          </div>
+        );
+      })}
+      <h3>Ukupno: {amount} </h3>
+
       <form method="POST" action="https://ecg.test.upc.ua/rbrs/enter">
         <input type="hidden" value="1" name="Version" />
         <input type="hidden" value="1756104" name="MerchantID" />
@@ -22,10 +36,14 @@ const Review = (props) => {
         <input type="hidden" value={`${amount}00`} name="TotalAmount" />
         <input type="hidden" value="941" name="Currency" />
         <input type="hidden" value="sr" name="locale" />
-        <input type="hidden" value="007" name="OrderID" />
-        <input type="hidden" value={moment().format("YYMMDDhhmmss")} name="PurchaseTime" />
+        <input type="hidden" value={`${order.data}`} name="OrderID" />
+        <input
+          type="hidden"
+          value={moment().format("YYMMDDhhmmss")}
+          name="PurchaseTime"
+        />
         <input type="hidden" value="Cleaning" name="PurchaseDesc" />
-        <button type="submit">Zavrsi kupovinu</button>
+        <Button type="submit">Zavrsi kupovinu</Button>
       </form>
     </div>
   );
