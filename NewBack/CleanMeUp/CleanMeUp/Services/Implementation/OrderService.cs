@@ -26,16 +26,16 @@ namespace CleanMeUp.Services.Implementation
         }
         public Task<int> AddOrder(Order model)
         {
-             try
+            try
             {
-                
-                _orderRepository.Add(model);
-                 _unitOfWork.SaveChanges();
-                return Task.FromResult(1);
+                var order = new Order { Items = model.Items, DeliveryAddress = model.DeliveryAddress, PickUpAddress = model.PickUpAddress, Phone = model.Phone };
+                _orderRepository.Add(order);
+                _unitOfWork.SaveChanges();
+                return Task.FromResult(order.Id);
             }
             catch (Exception ex)
             {
-                _logger.LogError("Error",ex);
+                _logger.LogError("Error", ex);
                 return Task.FromResult(0);
             }
         }
