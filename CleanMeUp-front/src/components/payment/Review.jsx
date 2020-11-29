@@ -27,7 +27,7 @@ const Review = (props) => {
           </div>
         );
       })}
-      <h3>Ukupno: {amount} </h3>
+      <h3>Ukupno: {amount} rsd</h3>
 
       <form method="POST" action="https://ecg.test.upc.ua/rbrs/enter">
         <input type="hidden" value="1" name="Version" />
