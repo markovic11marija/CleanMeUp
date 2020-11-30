@@ -5,7 +5,7 @@ import Logo from "./Logo";
 const Header = () => {
   return (
     <Navbar className="transparent">
-      <Navbar.Brand href="#home" className="header">
+      <Navbar.Brand href="/" className="header">
         <Logo className="header" /> CLEANMEUP
       </Navbar.Brand>
       <Navbar.Collapse>
