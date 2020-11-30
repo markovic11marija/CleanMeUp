@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace CleanMeUp.Controllers
@@ -22,6 +23,43 @@ namespace CleanMeUp.Controllers
         public async Task<ActionResult<IList<PriceList>>> AllPriceList()
         {
             return Ok(await _priceListService.GetAllPrices());
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<int>> Add(PriceList model)
+        {
+            var result = await _priceListService.AddPriceList(model);
+
+            if (result == 1)
+                return Ok(result);
+
+            return BadRequest(result);
+        }
+
+        [HttpDelete]
+        public ActionResult Delete(PriceList priceList)
+        {
+            if (priceList == null || priceList.Id <= 0)
+            {
+                return BadRequest();
+            }
+
+            _priceListService.Delete(priceList);
+
+            return NoContent();
+
+        }
+
+        [HttpGet("services")]
+        public async Task<ActionResult<IList<EnumResponse>>> AllServices()
+        {
+            return Ok(await _priceListService.GetAllServices());
+        }
+
+        [HttpGet("clothes")]
+        public async Task<ActionResult<IList<EnumResponse>>> AllClothesTypes()
+        {
+            return Ok(await _priceListService.GetAllClothesTypes());
         }
 
     }
