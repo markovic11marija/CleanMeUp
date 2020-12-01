@@ -17,7 +17,7 @@ namespace CleanMeUp.Domain.Model
 
             for (int i = 0; i < Items.Count; i++)
             {
-                items += $"<p><ul><li>Br stavke: { i + 1 }</li><li>Naziv stvke: {Items[i].Name }</li><li>Količina: {Items[i].Count }</li><li>Cena: {Items[i].Price }</li></ul></p>";
+                items += $"<p><ul><li>Br stavke: { i + 1 }</li><li>Naziv usluge: {Items[i].ServiceType }</li><li>Naziv stvke: {Items[i].Name }</li><li>Količina: {Items[i].Count }</li><li>Cena: {Items[i].Price }</li></ul></p>";
             }
 
             return items;

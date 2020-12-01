@@ -45,6 +45,8 @@ namespace CleanMeUp
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
             });
 
+            services.AddCors();
+
             //services.AddCors(options=> { options.AddDefaultPolicy(new Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicy()); });
 
         }
