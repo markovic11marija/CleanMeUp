@@ -10,10 +10,10 @@ namespace CleanMeUp.Infrastructure.Data.Ef
 {
     public class EntityFrameworkRepository<T> : IRepository<T> where T : Entity
     {
-        protected DbContext DbContext { get; }
+        protected CleanMeUpDbContext DbContext { get; }
         protected DbSet<T> DbSet { get; }
 
-        public EntityFrameworkRepository(DbContext context)
+        public EntityFrameworkRepository(CleanMeUpDbContext context)
         {
             DbContext = context;
             DbSet = context.Set<T>();
