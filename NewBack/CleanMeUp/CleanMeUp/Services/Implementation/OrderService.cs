@@ -23,6 +23,7 @@ namespace CleanMeUp.Services.Implementation
             _orderRepository = orederRepository;
             _unitOfWork = unitOfWork;
             _sengridService = sengridService;
+            _logger = logger;
         }
         public Task<int> AddOrder(Order model)
         {
@@ -74,7 +75,7 @@ namespace CleanMeUp.Services.Implementation
             }
             catch (Exception ex)
             {
-                _logger.LogError("Error while deleting order",ex);
+                _logger.LogError("Error while deleting order", ex);
             }
         }
     }
