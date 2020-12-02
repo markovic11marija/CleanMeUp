@@ -36,6 +36,18 @@ namespace CleanMeUp.Controllers
             return BadRequest(result);
         }
 
+        [HttpPost("{priceListId}")]
+        public async Task<ActionResult<int>> Update(int priceListId, PriceList model)
+        {
+            var result = await _priceListService.UpdatePriceList(priceListId, model);
+
+            if (result == 1)
+                return Ok(result);
+
+            return BadRequest(result);
+        }
+
+
         [HttpDelete]
         public ActionResult Delete(PriceList priceList)
         {

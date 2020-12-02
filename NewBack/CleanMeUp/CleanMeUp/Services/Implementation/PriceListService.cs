@@ -40,6 +40,23 @@ namespace CleanMeUp.Services.Implementation
             }
         }
 
+        public Task<int> UpdatePriceList(int priceListId, PriceList model)
+        {
+            try
+            {
+                var priceList = _priceListRepository.FindById(priceListId);
+                priceList.ClothesType = model.ClothesType;
+                priceList.ServiceType = model.ServiceType;
+                priceList.Price = model.Price;               
+                _unitOfWork.SaveChanges();
+                return Task.FromResult(priceList.Id);
+            }
+            catch
+            {
+                return Task.FromResult(0);
+            }
+        }
+
         public async Task<List<EnumResponse>> GetAllServices()
         {
             var a = Enum.GetValues(typeof(ServiceType))

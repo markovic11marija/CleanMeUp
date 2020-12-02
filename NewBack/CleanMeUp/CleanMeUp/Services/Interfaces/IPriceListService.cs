@@ -11,6 +11,7 @@ namespace CleanMeUp.Services
     {
         public  Task<List<PriceList>> GetAllPrices();
         public Task<int> AddPriceList(PriceList model);
+        public Task<int> UpdatePriceList(int priceListId, PriceList model);
         public Task<List<EnumResponse>> GetAllServices();
         public Task<List<EnumResponse>> GetAllClothesTypes();
         public void Delete(PriceList priceList);
