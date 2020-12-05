@@ -41,7 +41,7 @@ namespace CleanMeUp.Controllers
         }
 
         [HttpPost("confirmation")]
-        public void BankConfirmation(BankReqest reqest)
+        public void BankConfirmation([FromBody]BankReqest reqest)
         {
              _orderService.BankConfirmation(reqest);
         }
