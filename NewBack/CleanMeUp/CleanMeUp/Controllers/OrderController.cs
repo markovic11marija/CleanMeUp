@@ -48,15 +48,15 @@ namespace CleanMeUp.Controllers
         }
 
         [HttpPost("confirmation")]
-        public void BankConfirmation()
+        public void BankConfirmation(FormCollection form )
         {
-            logger.LogInformation("BankReqest", accessor.HttpContext.Request.Form["TranCode"]);
+            
           
-            var formData = new JavaScriptSerializer()
-      .Deserialize<BankReqest>(accessor.HttpContext.Request.Form["FormData"]);
-            _orderService.BankConfirmation(formData);
+      //      var formData = new JavaScriptSerializer()
+      //.Deserialize<BankReqest>(accessor.HttpContext.Request.Form["FormData"]);
+      //      _orderService.BankConfirmation(formData);
 
-            logger.LogInformation("BankRequest", formData);
+            logger.LogInformation("BankRequest", form);
         }
 
         [HttpDelete]
