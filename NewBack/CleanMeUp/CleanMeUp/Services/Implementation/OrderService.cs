@@ -48,10 +48,9 @@ namespace CleanMeUp.Services.Implementation
 
         public void BankConfirmation(BankReqest reqest)
         {
+            reqest.Id = 0;
             _bankRequestRepository.Add(reqest);
             _unitOfWork.SaveChanges();
-
-    
 
             var order = _orderRepository.QueryAllIncluding(o => o.Items).FirstOrDefault(a => a.Id == Convert.ToInt32(reqest.OrderID));
 
