@@ -3,6 +3,7 @@ using CleanMeUp.Infrastructure.Data;
 using CleanMeUp.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,15 +13,19 @@ namespace CleanMeUp.Services.Implementation
     public class OrderService : IOrderService
     {
         private readonly IRepository<Order> _orderRepository;
+        private readonly IRepository<BankReqest> _bankRequestRepository;
+
         private readonly IUnitOfWork _unitOfWork;
         private readonly ISengridService _sengridService;
         private readonly ILogger<OrderService> _logger;
         public OrderService(IRepository<Order> orederRepository,
+            IRepository<BankReqest> bankRequestRepository,
             IUnitOfWork unitOfWork,
             ILogger<OrderService> logger,
             ISengridService sengridService)
         {
             _orderRepository = orederRepository;
+            _bankRequestRepository = bankRequestRepository;
             _unitOfWork = unitOfWork;
             _sengridService = sengridService;
             _logger = logger;
@@ -40,6 +45,42 @@ namespace CleanMeUp.Services.Implementation
                 return Task.FromResult(0);
             }
         }
+
+        public void BankConfirmation(BankReqest reqest)
+        {
+            _bankRequestRepository.Add(reqest);
+            _unitOfWork.SaveChanges();
+
+    
+
+            var order = _orderRepository.QueryAllIncluding(o => o.Items).FirstOrDefault(a => a.Id == Convert.ToInt32(reqest.OrderID));
+
+            if (order == null)
+            {
+                _logger.LogInformation("Fail to remove order - order does not exist.", reqest.OrderID);
+                return;
+
+            }
+
+            order.Email = reqest.Email;
+
+            _unitOfWork.SaveChanges();
+
+            if (reqest.TranCode != "000")
+            {
+                _logger.LogInformation("Transaction code is not 000, tranCode is " + reqest.TranCode);
+                return;
+            }
+
+            var a = ConfirmOrder(Convert.ToInt32(reqest.OrderID), reqest.ApprovalCode.ToString());
+            if (a.Result == 0)
+            {
+                _logger.LogInformation("Fail to confirm order");
+
+            }
+
+        }
+
 
         public async Task<int> ConfirmOrder(int orderId, string bankReferenceId)
         {

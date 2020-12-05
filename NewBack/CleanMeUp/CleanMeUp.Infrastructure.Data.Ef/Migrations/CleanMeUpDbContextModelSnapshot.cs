@@ -46,6 +46,72 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.ToTable("Address");
                 });
 
+            modelBuilder.Entity("CleanMeUp.Domain.Model.BankReqest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("AltCurrency")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("AltTotalAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ApprovalCode")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Currency")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Delay")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MerchantID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProxyPan")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PurchaseTime")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Rrn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SD")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Signature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TerminalID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("TotalAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("TranCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("XID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("local")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BankReqest");
+                });
+
             modelBuilder.Entity("CleanMeUp.Domain.Model.Image", b =>
                 {
                     b.Property<int>("Id")
@@ -104,6 +170,9 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DeliveryAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")

@@ -10,5 +10,7 @@ namespace CleanMeUp.Services.Interfaces
         public Task<int> ConfirmOrder(int orderId, string bankReferenceId);
 
         public void Delete(Order order);
+
+        public void BankConfirmation(BankReqest reqest);
     }
 }

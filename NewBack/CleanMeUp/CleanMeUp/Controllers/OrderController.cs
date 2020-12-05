@@ -40,6 +40,12 @@ namespace CleanMeUp.Controllers
             return BadRequest(result);
         }
 
+        [HttpPost("confirmation")]
+        public void BankConfirmation(BankReqest reqest)
+        {
+             _orderService.BankConfirmation(reqest);
+        }
+
         [HttpDelete]
         public  ActionResult DeleteOrder(Order order)
         {
