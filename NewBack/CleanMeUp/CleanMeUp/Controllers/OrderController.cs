@@ -1,6 +1,9 @@
 ﻿using CleanMeUp.Domain.Model;
 using CleanMeUp.Services.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Nancy.Json;
 using System.Threading.Tasks;
 
 namespace CleanMeUp.Controllers
@@ -10,11 +13,15 @@ namespace CleanMeUp.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IOrderService _orderService;
+        private readonly IHttpContextAccessor accessor;
+        private readonly ILogger<OrderController> logger;
 
-        public OrderController(IOrderService orderService)
+        public OrderController(IOrderService orderService,IHttpContextAccessor accessor,ILogger<OrderController> logger)
         {
             
             this._orderService = orderService;
+            this.accessor = accessor;
+            this.logger = logger;
         }
 
         [HttpPost]
@@ -41,9 +48,15 @@ namespace CleanMeUp.Controllers
         }
 
         [HttpPost("confirmation")]
-        public void BankConfirmation([FromBody]BankReqest reqest)
+        public void BankConfirmation()
         {
-             _orderService.BankConfirmation(reqest);
+            logger.LogInformation("BankReqest", accessor.HttpContext.Request.Form["TranCode"]);
+          
+            var formData = new JavaScriptSerializer()
+      .Deserialize<BankReqest>(accessor.HttpContext.Request.Form["FormData"]);
+            _orderService.BankConfirmation(formData);
+
+            logger.LogInformation("BankRequest", formData);
         }
 
         [HttpDelete]
