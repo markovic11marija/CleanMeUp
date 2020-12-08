@@ -10,14 +10,14 @@ namespace CleanMeUp.Domain.Model
         public string MerchantID { get; set; }
         public string TerminalID { get; set; }
         public string TranCode { get; set; }
-        public int Currency { get; set; }
-        public int AltCurrency { get; set; }
-        public int ApprovalCode { get; set; }
+        public string Currency { get; set; }
+        public string AltCurrency { get; set; }
+        public string ApprovalCode { get; set; }
         public string OrderID { get; set; }
         public string Signature { get; set; }
-        public int PurchaseTime { get; set; }
-        public decimal TotalAmount { get; set; }
-        public decimal AltTotalAmount { get; set; }
+        public string PurchaseTime { get; set; }
+        public string TotalAmount { get; set; }
+        public string AltTotalAmount { get; set; }
         public string ProxyPan { get; set; }
         public string SD { get; set; }
         public string XID { get; set; }
