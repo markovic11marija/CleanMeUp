@@ -34,15 +34,15 @@ namespace CleanMeUp.WebApi.Controllers
 
 
         [HttpPost]
-        [Route("confirm")]
-        public async Task<ActionResult<CommandResult<CommandEmptyResult>>> ConfirmOrder([FromBody]ConfirmOrderCommand command)
+        [Route("confirmation")]
+        public async Task<ActionResult<CommandResult<CommandEmptyResult>>> ConfirmOrder([FromForm]ConfirmOrderCommand command)
         {
-            var result = await _mediator.Send(command);
+            //var result = await _mediator.Send(command);
 
-            if (result.IsSuccess)
-                return Ok(result.Payload);
+            //if (result.IsSuccess)
+                return Ok(command.Signature);
 
-            return BadRequest(result.FailureReason);
+            //return BadRequest(result.FailureReason);
         }
 
         [HttpDelete]
