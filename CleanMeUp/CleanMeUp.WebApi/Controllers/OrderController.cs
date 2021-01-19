@@ -40,9 +40,9 @@ namespace CleanMeUp.WebApi.Controllers
             //var result = await _mediator.Send(command);
 
             //if (result.IsSuccess)
-                return Ok(command.Signature);
+                //return Ok(command.Signature);
 
-            //return BadRequest(result.FailureReason);
+            return BadRequest(command.Signature);
         }
 
         [HttpDelete]
