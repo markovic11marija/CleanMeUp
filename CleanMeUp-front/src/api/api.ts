@@ -18,7 +18,7 @@ export async function postData(request: ApiRequest) {
   try {
     const result = await axios.post(
       `${process.env.REACT_APP_API_URL}${request.url}`,
-      { data: request.data }
+      { ...request.data }
     );
     request.dispatch(request.successActionType(result.data));
   } catch (err) {
@@ -31,7 +31,7 @@ export async function putData(request: ApiRequest) {
   try {
     const result = await axios.put(
       `${process.env.REACT_APP_API_URL}${request.url}`,
-      { data: request.data }
+      { ...request.data }
     );
     request.dispatch(request.successActionType(result.data));
   } catch (err) {

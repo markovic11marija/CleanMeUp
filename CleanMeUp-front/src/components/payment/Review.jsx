@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import moment from "moment";
 import { useSelector } from "react-redux";
 import { Button } from "react-bootstrap";
+import { isNumber } from "util";
 
 const Review = (props) => {
   const [amount, setAmount] = useState();
@@ -36,14 +37,15 @@ const Review = (props) => {
         <input type="hidden" value={`${amount}00`} name="TotalAmount" />
         <input type="hidden" value="941" name="Currency" />
         <input type="hidden" value="sr" name="locale" />
-        <input type="hidden" value={`${order.data}`} name="OrderID" />
+        <input type="hidden" value={order.data} name="OrderID" />
+        
         <input
           type="hidden"
           value={moment().format("YYMMDDhhmmss")}
           name="PurchaseTime"
         />
         <input type="hidden" value="Cleaning" name="PurchaseDesc" />
-        <Button type="submit">Zavrsi kupovinu</Button>
+        <Button disabled={typeof order.data !== 'number'} type="submit">Zavrsi kupovinu</Button>
       </form>
     </div>
   );
