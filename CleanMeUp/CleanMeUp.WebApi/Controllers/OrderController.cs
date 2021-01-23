@@ -22,6 +22,18 @@ namespace CleanMeUp.WebApi.Controllers
         }
 
         [HttpPost]
+        public async Task<ActionResult<CommandResult<int>>> Add([FromBody]AddOrderCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            if (result.IsSuccess)
+                return Ok(result.Payload);
+
+            return BadRequest(result.FailureReason);
+        }
+
+
+        [HttpPost]
         [Route("confirmation")]
         public async Task<ActionResult<CommandResult<CommandEmptyResult>>> ConfirmOrder([FromForm]ConfirmOrderCommand command)
         {
