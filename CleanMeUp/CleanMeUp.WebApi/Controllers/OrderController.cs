@@ -30,7 +30,7 @@ namespace CleanMeUp.WebApi.Controllers
             if (result.IsSuccess)
                 return Ok(result.Payload);
 
-            return BadRequest(result.);
+            return BadRequest(result.FailureReason);
         }
 
         [HttpDelete]
