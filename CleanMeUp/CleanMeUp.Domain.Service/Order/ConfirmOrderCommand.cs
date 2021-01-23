@@ -20,5 +20,6 @@ namespace CleanMeUp.Domain.Service.Order
         public long? PurchaseTime { get; set; }
         public double? TotalAmount { get; set; }
         public int? AltTotalAmount { get; set; }
+        public string Email { get; set; }
     }
 }
