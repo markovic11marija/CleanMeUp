@@ -9,6 +9,7 @@ namespace CleanMeUp.Domain.Model
         public string DeliveryAddress { get; set; }
         public string Phone { get; set; }
         public string BankReferenceId { get; set; }
+        public string Signature { get; set; }
 
 
         public string ReturnItems() {

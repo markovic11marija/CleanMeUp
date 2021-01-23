@@ -41,8 +41,8 @@ namespace CleanMeUp.Domain.Service.Order
             order.BankReferenceId = bankReference;
             _unitOfWork.SaveChanges();
 
-            //var sendGrid = new SendGridService(order, _configuration);
-            //await sendGrid.SendMailAsync();
+            var sendGrid = new SendGridService(order, _configuration);
+            await sendGrid.SendMailAsync();
 
             return await Task.FromResult(CommandResult<CommandEmptyResult>.Success(new CommandEmptyResult()));
         }
