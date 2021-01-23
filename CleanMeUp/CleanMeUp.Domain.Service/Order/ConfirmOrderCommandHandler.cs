@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CleanMeUp.Domain.Service.Order
 {
-  public  class ConfirmOrderCommandHandler : IRequestHandler<ConfirmOrderCommand, CommandResult<CommandEmptyResult>>
+    public class ConfirmOrderCommandHandler : IRequestHandler<ConfirmOrderCommand, CommandResult<CommandEmptyResult>>
     {
         private readonly IRepository<Model.Order> _orderRepository;
         private readonly IUnitOfWork _unitOfWork;
@@ -31,17 +31,18 @@ namespace CleanMeUp.Domain.Service.Order
                 return await Task.FromResult(CommandResult<CommandEmptyResult>.Fail("Fail to remove order - order does not exist."));
 
             }
+            var bankReference = $"{request.MerchantId};{request.TerminalId};{request.PurchaseTime};{request.OrderId};{request.Currency};{request.TotalAmount};";
 
-            if (request.BankReferenceId == null || request.BankReferenceId == "")
+            if (bankReference == null || bankReference == "")
             {
                 return await Task.FromResult(CommandResult<CommandEmptyResult>.Fail("Cannot confirm without bank reference."));
 
             }
-            order.BankReferenceId = request.BankReferenceId;
+            order.BankReferenceId = bankReference;
             _unitOfWork.SaveChanges();
 
-            var sendGrid = new SendGridService(order, _configuration);
-            await sendGrid.SendMailAsync();
+            //var sendGrid = new SendGridService(order, _configuration);
+            //await sendGrid.SendMailAsync();
 
             return await Task.FromResult(CommandResult<CommandEmptyResult>.Success(new CommandEmptyResult()));
         }
