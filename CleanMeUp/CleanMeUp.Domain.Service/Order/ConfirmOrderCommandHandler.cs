@@ -39,6 +39,8 @@ namespace CleanMeUp.Domain.Service.Order
 
             }
             order.BankReferenceId = bankReference;
+            order.Signature = request.Signature;
+
             _unitOfWork.SaveChanges();
 
             var sendGrid = new SendGridService(order, _configuration);
