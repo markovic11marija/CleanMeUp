@@ -12,13 +12,13 @@ namespace CleanMeUp.Domain.Service.Order
         public string MerchantId { get; set; }
         [JsonProperty("TerminalID")]
         public string TerminalId { get; set; }
-        public long TranCode { get; set; }
-        public long Currency { get; set; }
+        public long? TranCode { get; set; }
+        public long? Currency { get; set; }
         public long? AltCurrency { get; set; }
-        public long ApprovalCode { get; set; }
+        public long? ApprovalCode { get; set; }
         public string Signature { get; set; }
-        public long PurchaseTime { get; set; }
-        public double TotalAmount { get; set; }
+        public long? PurchaseTime { get; set; }
+        public double? TotalAmount { get; set; }
         public int? AltTotalAmount { get; set; }
     }
 }
