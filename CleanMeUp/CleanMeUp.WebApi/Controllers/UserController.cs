@@ -1,5 +1,7 @@
 ﻿using CleanMeUp.Domain.Model;
+using CleanMeUp.Domain.Service;
 using CleanMeUp.Domain.Service.SignIn;
+using CleanMeUp.Domain.Service.Users;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -20,9 +22,20 @@ namespace CleanMeUp.WebApi.Controllers
 
         [HttpGet]
         [Route("sign-in")]
-        public async Task<ActionResult<User>> Search(string email, string password)
+        public async Task<ActionResult<CommandResult<UserData>>> Search(string email, string password)
         {
             return Ok(await _mediator.Send(new SignInQuery(email, password)));
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<CommandResult<int>>> Add([FromBody] AddUserCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            if (result.IsSuccess)
+                return Ok(result.Payload);
+
+            return BadRequest(result.FailureReason);
         }
 
     }

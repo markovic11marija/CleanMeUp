@@ -4,14 +4,16 @@ using CleanMeUp.Infrastructure.Data.Ef;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
 {
     [DbContext(typeof(CleanMeUpDbContext))]
-    partial class CleanMeUpDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210222225703_UpdatingUser")]
+    partial class UpdatingUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -182,7 +184,7 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
             modelBuilder.Entity("CleanMeUp.Domain.Model.Order", b =>
                 {
                     b.HasOne("CleanMeUp.Domain.Model.User", "User")
-                        .WithMany("Orders")
+                        .WithMany()
                         .HasForeignKey("UserId");
                 });
 

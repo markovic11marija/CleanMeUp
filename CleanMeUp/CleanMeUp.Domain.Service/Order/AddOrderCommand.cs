@@ -1,5 +1,4 @@
 ﻿using CleanMeUp.Domain.Model;
-using CleanMeUp.Domain.Model.Core;
 using MediatR;
 using System.Collections.Generic;
 
@@ -11,6 +10,7 @@ namespace CleanMeUp.Domain.Service
         public string PickUpAddress { get; set; }
         public string DeliveryAddress { get; set; }
         public string Phone { get; set; }
+        public int? UserId { get; set; }
 
     }
 }

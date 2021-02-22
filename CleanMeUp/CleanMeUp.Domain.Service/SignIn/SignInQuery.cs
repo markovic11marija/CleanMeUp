@@ -1,9 +1,8 @@
-﻿using CleanMeUp.Domain.Model;
-using MediatR;
+﻿using MediatR;
 
 namespace CleanMeUp.Domain.Service.SignIn
 {
-    public class SignInQuery : IRequest<User>
+    public class SignInQuery : IRequest<CommandResult<UserData>>
     {
         public string Email { get; }
         public string Password { get; }

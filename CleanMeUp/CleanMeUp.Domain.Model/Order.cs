@@ -11,6 +11,7 @@ namespace CleanMeUp.Domain.Model
         public string BankReferenceId { get; set; }
         public string Signature { get; set; }
         public string Email { get; set; }
+        public User User { get; set; } = null;
 
 
         public string ReturnItems() {
