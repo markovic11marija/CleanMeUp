@@ -15,6 +15,7 @@ namespace CleanMeUp.Domain.Model
         public DateTime DateCreated { get; set; }
         public string Note { get; set; }
         public string DeliveryNote { get; set; }
+        public string PaymentMethod { get; set; }
 
 
         public string ReturnItems() {

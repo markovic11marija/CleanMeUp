@@ -45,6 +45,18 @@ namespace CleanMeUp.WebApi.Controllers
             return BadRequest(result.FailureReason);
         }
 
+        [HttpPost]
+        [Route("cash-on-delivery")]
+        public async Task<ActionResult<CommandResult<CommandEmptyResult>>> CashOnDeliveryOrder([FromForm] CashOnDeliveryOrderCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            if (result.IsSuccess)
+                return Ok(result.Payload);
+
+            return BadRequest(result.FailureReason);
+        }
+
         [HttpDelete]
         public async Task<ActionResult<CommandResult<CommandEmptyResult>>> DeleteOrder([FromBody]DeleteOrderCommand command)
         {

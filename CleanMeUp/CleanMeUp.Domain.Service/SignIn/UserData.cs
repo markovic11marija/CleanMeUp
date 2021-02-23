@@ -5,7 +5,9 @@ namespace CleanMeUp.Domain.Service.SignIn
 {
     public class UserData
     {
-        public User User { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public Address Address { get; set; }
         public IList<Model.Order> Orders { get; set; }
     }
 }
