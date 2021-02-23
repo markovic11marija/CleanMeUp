@@ -6,13 +6,15 @@ namespace CleanMeUp.Domain.Model
     public class Order : Entity
     {
         public IList<Item> Items { get; set; }
-        public string PickUpAddress { get; set; }
-        public string DeliveryAddress { get; set; }
+        public Address PickUpAddress { get; set; }
+        public Address DeliveryAddress { get; set; }
         public string Phone { get; set; }
         public string BankReferenceId { get; set; }
         public string Signature { get; set; }
         public string Email { get; set; }
         public DateTime DateCreated { get; set; }
+        public string Note { get; set; }
+        public string DeliveryNote { get; set; }
 
 
         public string ReturnItems() {
