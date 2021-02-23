@@ -5,6 +5,7 @@ using CleanMeUp.Domain.Service.Order;
 using CleanMeUp.Domain.Service.SignIn;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace CleanMeUp.WebApi.Controllers
@@ -21,7 +22,21 @@ namespace CleanMeUp.WebApi.Controllers
             _mediator = mediator;
         }
 
+        [HttpGet]
+        public async Task<ActionResult<CommandResult<IList<Order>>>> All()
+        {
+            return Ok(await _mediator.Send(new GetOrderListQuery()));
+        }
+
+        [HttpGet]
+        [Route("by-id")]
+        public async Task<ActionResult<CommandResult<Order>>> GetById([FromBody] GetOrderByIdQuery query)
+        {
+            return Ok(await _mediator.Send(query));
+        }
+
         [HttpPost]
+
         public async Task<ActionResult<CommandResult<int>>> Add([FromBody]AddOrderCommand command)
         {
             var result = await _mediator.Send(command);
