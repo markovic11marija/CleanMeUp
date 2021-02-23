@@ -16,6 +16,7 @@ namespace CleanMeUp.Domain.Model
         public string Note { get; set; }
         public string DeliveryNote { get; set; }
         public string PaymentMethod { get; set; }
+        public File File { get; set; }
 
 
         public string ReturnItems() {

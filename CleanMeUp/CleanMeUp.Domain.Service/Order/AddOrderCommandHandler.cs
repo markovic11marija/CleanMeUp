@@ -28,7 +28,7 @@ namespace CleanMeUp.Domain.Service
         {
             var deliveryAddress = new Address { Street = request.DeliveryAddress.Street, HouseNumber = request.DeliveryAddress.HouseNumber, District = request.DeliveryAddress.District };
             var pickUpAddress = new Address { Street = request.PickUpAddress.Street, HouseNumber = request.PickUpAddress.HouseNumber, District = request.PickUpAddress.District };
-            var order = new Model.Order { Items = request.Items, DeliveryAddress = deliveryAddress, PickUpAddress = pickUpAddress, Phone = request.Phone, Note = request.Note, DeliveryNote = request.DeliveryNote };
+            var order = new Model.Order { Items = request.Items, DeliveryAddress = deliveryAddress, PickUpAddress = pickUpAddress, Phone = request.Phone, Note = request.Note, DeliveryNote = request.DeliveryNote, File = new File { FileInBytes = request.FileInBytes, Name = request.FileName } };
             _orderRepository.Add(order);
             _unitOfWork.SaveChanges();
 

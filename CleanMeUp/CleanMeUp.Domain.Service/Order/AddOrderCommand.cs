@@ -14,6 +14,8 @@ namespace CleanMeUp.Domain.Service
         public int? UserId { get; set; }
         public string Note { get; set; }
         public string DeliveryNote { get; set; }
+        public string FileName { get; set; }
+        public byte[] FileInBytes { get; set; }
 
     }
 }

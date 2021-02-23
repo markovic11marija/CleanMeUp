@@ -25,7 +25,7 @@ namespace CleanMeUp.Domain.Service.Order
 
         public async Task<CommandResult<CommandEmptyResult>> Handle(CashOnDeliveryOrderCommand request, CancellationToken cancellationToken)
         {
-            var order = _orderRepository.QueryAllIncluding(o => o.Items, o => o.DeliveryAddress, o => o.PickUpAddress).FirstOrDefault(a => a.Id == request.OrderId);
+            var order = _orderRepository.QueryAllIncluding(o => o.Items, o => o.DeliveryAddress, o => o.PickUpAddress, o => o.File).FirstOrDefault(a => a.Id == request.OrderId);
 
             if (order == null)
             {
@@ -34,11 +34,15 @@ namespace CleanMeUp.Domain.Service.Order
             }
           
             order.PaymentMethod = "Plaćanje pouzećem";
-
             _unitOfWork.SaveChanges();
 
             var sendGrid = new SendGridService(order, _configuration);
             var success = await sendGrid.SendMailAsync();
+
+            order.File.Name = null;
+            order.File.FileInBytes = null;
+
+            _unitOfWork.SaveChanges();
 
             if (!success)
                 return await Task.FromResult(CommandResult<CommandEmptyResult>.Fail(new CommandEmptyResult()));
