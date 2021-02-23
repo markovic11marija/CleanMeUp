@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace CleanMeUp.Domain.Model
 {
@@ -11,7 +12,7 @@ namespace CleanMeUp.Domain.Model
         public string BankReferenceId { get; set; }
         public string Signature { get; set; }
         public string Email { get; set; }
-        public User User { get; set; } = null;
+        public DateTime DateCreated { get; set; }
 
 
         public string ReturnItems() {

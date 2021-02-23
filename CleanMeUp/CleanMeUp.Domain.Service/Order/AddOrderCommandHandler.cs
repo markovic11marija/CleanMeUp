@@ -13,11 +13,14 @@ namespace CleanMeUp.Domain.Service
     public class AddOrderCommandHandler : IRequestHandler<AddOrderCommand, CommandResult<int>>
     {
         private readonly IRepository<Model.Order> _orderRepository;
+        private readonly IRepository<UserOrder> _userOrderRepository;
+
         private readonly IUnitOfWork _unitOfWork;
 
-        public AddOrderCommandHandler(IRepository<Model.Order> orderRepository, IUnitOfWork unitOfWork)
+        public AddOrderCommandHandler(IRepository<Model.Order> orderRepository, IRepository<UserOrder> userOrderRepository, IUnitOfWork unitOfWork)
         {
             _orderRepository = orderRepository;
+            _userOrderRepository = userOrderRepository;
             _unitOfWork = unitOfWork;
         }
 
@@ -29,8 +32,7 @@ namespace CleanMeUp.Domain.Service
 
             if (request.UserId != null && request.UserId != 0)
             {
-                var o = _orderRepository.QueryAllIncluding(o => o.User).First(a => a.Id == request.UserId);
-                o.User.Id = request.UserId.Value;
+                _userOrderRepository.Add(new UserOrder { UserId = request.UserId.Value, OrderId = order.Id });
                 _unitOfWork.SaveChanges();
             }
 

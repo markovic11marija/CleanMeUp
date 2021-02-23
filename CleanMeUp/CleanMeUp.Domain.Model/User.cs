@@ -10,6 +10,7 @@ namespace CleanMeUp.Domain.Model
         public string Password { get; set; }
         public Address Address { get; set; }
         public IList<Order> Orders { get; set; }
+        public IList<UserOrder> UserOrders { get; set; }
 
     }
 }

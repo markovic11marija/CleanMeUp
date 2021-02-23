@@ -12,7 +12,6 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Configuration
         public void Configure(EntityTypeBuilder<Order> builder)
         {
             builder.HasKey(u => u.Id);
-            builder.HasOne(u => u.User).WithMany(u => u.Orders);
         }
     }
 }

@@ -11,12 +11,12 @@ namespace CleanMeUp.Domain.Service
     public class SignInQueryHandler : IRequestHandler<SignInQuery, CommandResult<UserData>>
     {
         private readonly IRepository<User> _userRepository; 
-        private readonly IRepository<Model.Order> _orderRepository;
+        private readonly IRepository<UserOrder> _userorderRepository;
 
-        public SignInQueryHandler(IRepository<User> userRepository, IRepository<Model.Order> orderRepository)
+        public SignInQueryHandler(IRepository<User> userRepository, IRepository<UserOrder> userorderRepository)
         {
             _userRepository = userRepository;
-            _orderRepository = orderRepository;
+            _userorderRepository = userorderRepository;
         }
 
         public async Task<CommandResult<UserData>> Handle(SignInQuery request, CancellationToken cancellationToken)
@@ -27,7 +27,7 @@ namespace CleanMeUp.Domain.Service
                 return await Task.FromResult(CommandResult<UserData>.Fail("Fail to log in. Wrong email or password"));
 
             }
-            var orders = _orderRepository.QueryAll().Where(o => o.User.Id == user.Id)?.ToList();
+            var orders = _userorderRepository.QueryAll().Where(o => o.User.Id == user.Id)?.Select(p=> p.Order).ToList();
             return await Task.FromResult(CommandResult<UserData>.Success(new UserData { User = user, Orders = orders}));
 
 
