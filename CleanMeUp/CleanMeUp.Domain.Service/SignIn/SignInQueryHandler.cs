@@ -21,7 +21,7 @@ namespace CleanMeUp.Domain.Service
 
         public async Task<CommandResult<UserData>> Handle(SignInQuery request, CancellationToken cancellationToken)
         {
-            var user = _userRepository.QueryAll().FirstOrDefault(u => u.Email == request.Email && u.Password == request.Password);
+            var user = _userRepository.QueryAllIncluding(a => a.Address).FirstOrDefault(u => u.Email == request.Email && u.Password == request.Password);
             if (user == null)
             {
                 return await Task.FromResult(CommandResult<UserData>.Fail("Fail to log in. Wrong email or password"));

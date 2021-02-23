@@ -38,5 +38,17 @@ namespace CleanMeUp.WebApi.Controllers
             return BadRequest(result.FailureReason);
         }
 
+        [HttpPost]
+        [Route("add-address")]
+        public async Task<ActionResult<CommandResult<int>>> AddAddress([FromBody] AddUserAddressCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            if (result.IsSuccess)
+                return Ok(result.Payload);
+
+            return BadRequest(result.FailureReason);
+        }
+
     }
 }
