@@ -1,10 +1,8 @@
 import React from "react";
-import Header from "../homepage/Header";
 
 const Error = () => {
   return (
     <>
-      <Header />
       <div className="image">
         <div className="cardContainer transparent">
           <h5>Placanje nije uspelo</h5>

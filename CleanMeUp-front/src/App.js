@@ -1,10 +1,13 @@
 import React, { Suspense } from "react";
 import { connect } from "react-redux";
-import "./style/style.scss";
 import routes from "./routes/routes";
-// import "bootstrap/dist/css/bootstrap.min.css"
-import { Router, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import './scss/bootstrap.css';
+import 'font-awesome/css/font-awesome.min.css';
+import './App.scss';
+import { LayoutHome } from "./layouts/layout-home/LayoutHome";
+import { MainLayout } from "./layouts/main-layout/MainLayout";
 
 function App() {
   const history = createBrowserHistory();
@@ -14,22 +17,12 @@ function App() {
   const routing = () => {
     return (
       <Suspense fallback={loading()} history={history}>
-        <Router history={history}>
+        <BrowserRouter history={history}>
           <Switch>
-            {routes.map((route, id) => {
-              return route.component ? (
-                <Route
-                  key={id}
-                  path={route.path}
-                  exact={route.exact}
-                  name={route.name}
-                  render={(props) => <route.component {...props} />}
-                />
-              ) : null;
-            })}
-            <Redirect to="/" />
+            <Route path="/" exact={true} component={LayoutHome} />
+            <Route path="/page" component={MainLayout}/>
           </Switch>
-        </Router>
+        </BrowserRouter>
       </Suspense>
     );
   };
@@ -37,7 +30,6 @@ function App() {
   return (
     <div className="App">
       {routing()}
-      {/* <Order /> */}
     </div>
   );
 }

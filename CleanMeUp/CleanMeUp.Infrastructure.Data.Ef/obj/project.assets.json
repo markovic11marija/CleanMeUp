@@ -1819,6 +1819,7 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -1873,6 +1874,7 @@
       "path": "runtime.native.system/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -2103,6 +2105,7 @@
       "path": "system.collections.nongeneric/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2741,6 +2744,7 @@
       "path": "system.globalization.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3007,6 +3011,7 @@
       "path": "system.net.nameresolution/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3221,6 +3226,7 @@
       "path": "system.reflection.emit/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3256,6 +3262,7 @@
       "path": "system.reflection.emit.ilgeneration/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3300,6 +3307,7 @@
       "path": "system.reflection.emit.lightweight/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3456,6 +3464,7 @@
       "path": "system.reflection.typeextensions/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3954,7 +3963,6 @@
       "path": "system.runtime.serialization.json/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4013,6 +4021,7 @@
       "path": "system.runtime.serialization.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4859,6 +4868,7 @@
       "path": "system.xml.xmldocument/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4981,23 +4991,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marija.markovic\\.nuget\\packages\\": {},
+    "C:\\Users\\Danijela\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj",
+      "projectUniqueName": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj",
       "projectName": "CleanMeUp.Infrastructure.Data.Ef",
-      "projectPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj",
-      "packagesPath": "C:\\Users\\marija.markovic\\.nuget\\packages\\",
-      "outputPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\obj\\",
+      "projectPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj",
+      "packagesPath": "C:\\Users\\Danijela\\.nuget\\packages\\",
+      "outputPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\marija.markovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Danijela\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5010,8 +5020,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj": {
-              "projectPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj"
+            "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj": {
+              "projectPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj"
             }
           }
         }
@@ -5055,7 +5065,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.407\\RuntimeIdentifierGraph.json"
       }
     }
   }

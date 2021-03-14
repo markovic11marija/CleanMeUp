@@ -47,7 +47,7 @@ namespace CleanMeUp.Domain.Service.Order
             var sendGrid = new SendGridService(order, _configuration);
             await sendGrid.SendMailAsync();
 
-            return await Task.FromResult(CommandResult<CommandEmptyResult>.Success(new CommandEmptyResult()));
+            return await Task.FromResult(CommandResult<CommandEmptyResult>.Success(null));
         }
     }
 }

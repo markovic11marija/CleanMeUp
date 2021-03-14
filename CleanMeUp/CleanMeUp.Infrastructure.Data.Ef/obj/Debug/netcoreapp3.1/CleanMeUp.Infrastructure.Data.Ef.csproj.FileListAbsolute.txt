@@ -32,3 +32,20 @@ D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp
 D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.dll
 D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.pdb
 D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.genruntimeconfig.cache
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.deps.json
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.runtimeconfig.json
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.runtimeconfig.dev.json
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.dll
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.pdb
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.dll
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.dll
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.pdb
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.pdb
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.csprojAssemblyReference.cache
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.AssemblyInfoInputs.cache
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.AssemblyInfo.cs
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.csproj.CoreCompileInputs.cache
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.csproj.CopyComplete
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.dll
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.pdb
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Infrastructure.Data.Ef\obj\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.Ef.genruntimeconfig.cache

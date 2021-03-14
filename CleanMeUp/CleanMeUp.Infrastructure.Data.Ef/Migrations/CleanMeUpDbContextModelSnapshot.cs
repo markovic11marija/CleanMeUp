@@ -103,10 +103,16 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.Property<string>("DeliveryAddress")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PickUpAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Signature")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

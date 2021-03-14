@@ -4,10 +4,12 @@ const OrderCounter = ({ name, price, setOrder, order }) => {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
-      <h6>{name}</h6>
+    <div className="d-flex justify-content-center flex-column align-items-center order-counter-wrapper">
+      <h6 className="text-center">{name}</h6>
       <div>
         <button
+          disabled={count==0}
+          type="button"
           onClick={() => {
             setCount(count - 1);
             setOrder({
@@ -26,10 +28,11 @@ const OrderCounter = ({ name, price, setOrder, order }) => {
         >
           -
         </button>
-        <button disabled className="btn transparent orderBtn">
+        <button type="button" disabled className="btn transparent orderBtn">
           {count}
         </button>
         <button
+          type="button"
           onClick={() => {
             setCount(count + 1);
             setOrder({

@@ -1,0 +1,31 @@
+.orderContainer {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.orderBtn {
+  color: aliceblue;
+  font-size: 2rem;
+}
+
+.countSpan {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.textbox {
+  border: 1px solid #848484;
+  border-radius: 0.3rem;
+  outline: 0;
+  height: 2.5rem;
+  width: 22rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+/*# sourceMappingURL=wizzardStayle.css.map */

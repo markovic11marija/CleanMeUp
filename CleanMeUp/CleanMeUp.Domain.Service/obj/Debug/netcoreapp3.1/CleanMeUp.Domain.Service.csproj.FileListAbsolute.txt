@@ -26,3 +26,17 @@ D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\Clea
 D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.dll
 D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.pdb
 D:\Eva\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.csproj.CoreCompileInputs.cache
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.csprojAssemblyReference.cache
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.AssemblyInfoInputs.cache
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.AssemblyInfo.cs
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.csproj.CoreCompileInputs.cache
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.dll
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.pdb
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.deps.json
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.dll
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.pdb
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.dll
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.dll
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\bin\Debug\netcoreapp3.1\CleanMeUp.Domain.Model.pdb
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\bin\Debug\netcoreapp3.1\CleanMeUp.Infrastructure.Data.pdb
+C:\Duos Asinus\Promoter\CleanMeUp\CleanMeUp\CleanMeUp.Domain.Service\obj\Debug\netcoreapp3.1\CleanMeUp.Domain.Service.csproj.CopyComplete

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure\\CleanMeUp.Infrastructure.csproj": {}
+    "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure\\CleanMeUp.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj": {
+    "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj",
+        "projectUniqueName": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj",
         "projectName": "CleanMeUp.Domain.Model",
-        "projectPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj",
-        "packagesPath": "C:\\Users\\marija.markovic\\.nuget\\packages\\",
-        "outputPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\obj\\",
+        "projectPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj",
+        "packagesPath": "C:\\Users\\Danijela\\.nuget\\packages\\",
+        "outputPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\marija.markovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Danijela\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,24 +55,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.407\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj": {
+    "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj",
+        "projectUniqueName": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj",
         "projectName": "CleanMeUp.Infrastructure.Data.Ef",
-        "projectPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj",
-        "packagesPath": "C:\\Users\\marija.markovic\\.nuget\\packages\\",
-        "outputPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\obj\\",
+        "projectPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj",
+        "packagesPath": "C:\\Users\\Danijela\\.nuget\\packages\\",
+        "outputPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\marija.markovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Danijela\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,8 +85,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj": {
-                "projectPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj"
+              "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj": {
+                "projectPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj"
               }
             }
           }
@@ -130,24 +130,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.407\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj": {
+    "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj",
+        "projectUniqueName": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj",
         "projectName": "CleanMeUp.Infrastructure.Data",
-        "projectPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj",
-        "packagesPath": "C:\\Users\\marija.markovic\\.nuget\\packages\\",
-        "outputPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\obj\\",
+        "projectPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj",
+        "packagesPath": "C:\\Users\\Danijela\\.nuget\\packages\\",
+        "outputPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\marija.markovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Danijela\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -160,8 +160,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj": {
-                "projectPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj"
+              "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj": {
+                "projectPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Domain.Model\\CleanMeUp.Domain.Model.csproj"
               }
             }
           }
@@ -189,24 +189,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.407\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure\\CleanMeUp.Infrastructure.csproj": {
+    "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure\\CleanMeUp.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure\\CleanMeUp.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure\\CleanMeUp.Infrastructure.csproj",
         "projectName": "CleanMeUp.Infrastructure",
-        "projectPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure\\CleanMeUp.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\marija.markovic\\.nuget\\packages\\",
-        "outputPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure\\obj\\",
+        "projectPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure\\CleanMeUp.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Danijela\\.nuget\\packages\\",
+        "outputPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\marija.markovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Danijela\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -219,11 +219,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj": {
-                "projectPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj"
+              "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj": {
+                "projectPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data.Ef\\CleanMeUp.Infrastructure.Data.Ef.csproj"
               },
-              "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj": {
-                "projectPath": "D:\\Eva\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj"
+              "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj": {
+                "projectPath": "C:\\Duos Asinus\\Promoter\\CleanMeUp\\CleanMeUp\\CleanMeUp.Infrastructure.Data\\CleanMeUp.Infrastructure.Data.csproj"
               }
             }
           }
@@ -261,7 +261,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.407\\RuntimeIdentifierGraph.json"
         }
       }
     }
