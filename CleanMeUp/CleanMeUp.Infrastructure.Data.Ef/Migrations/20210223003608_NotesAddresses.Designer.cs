@@ -4,14 +4,16 @@ using CleanMeUp.Infrastructure.Data.Ef;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
 {
     [DbContext(typeof(CleanMeUpDbContext))]
-    partial class CleanMeUpDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210223003608_NotesAddresses")]
+    partial class NotesAddresses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,24 +40,6 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Address");
-                });
-
-            modelBuilder.Entity("CleanMeUp.Domain.Model.File", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<byte[]>("FileInBytes")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("File");
                 });
 
             modelBuilder.Entity("CleanMeUp.Domain.Model.Image", b =>
@@ -124,16 +108,7 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("FileId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PaymentMethod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
@@ -151,8 +126,6 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("DeliveryAddressId");
-
-                    b.HasIndex("FileId");
 
                     b.HasIndex("PickUpAddressId");
 
@@ -238,10 +211,6 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.HasOne("CleanMeUp.Domain.Model.Address", "DeliveryAddress")
                         .WithMany()
                         .HasForeignKey("DeliveryAddressId");
-
-                    b.HasOne("CleanMeUp.Domain.Model.File", "File")
-                        .WithMany()
-                        .HasForeignKey("FileId");
 
                     b.HasOne("CleanMeUp.Domain.Model.Address", "PickUpAddress")
                         .WithMany()

@@ -4,14 +4,16 @@ using CleanMeUp.Infrastructure.Data.Ef;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
 {
     [DbContext(typeof(CleanMeUpDbContext))]
-    partial class CleanMeUpDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210222225703_UpdatingUser")]
+    partial class UpdatingUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,11 +28,17 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("District")
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("HouseNumber")
                         .HasColumnType("int");
+
+                    b.Property<string>("HouseNumberAddition")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Street")
                         .HasColumnType("nvarchar(max)");
@@ -38,24 +46,6 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Address");
-                });
-
-            modelBuilder.Entity("CleanMeUp.Domain.Model.File", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<byte[]>("FileInBytes")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("File");
                 });
 
             modelBuilder.Entity("CleanMeUp.Domain.Model.Image", b =>
@@ -112,25 +102,7 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.Property<string>("BankReferenceId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("DeliveryAddressId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DeliveryNote")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("FileId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PaymentMethod")
+                    b.Property<string>("DeliveryAddress")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -139,8 +111,8 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("PickUpAddressId")
-                        .HasColumnType("int");
+                    b.Property<string>("PickUpAddress")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Signature")
                         .HasColumnType("nvarchar(max)");
@@ -149,12 +121,6 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DeliveryAddressId");
-
-                    b.HasIndex("FileId");
-
-                    b.HasIndex("PickUpAddressId");
 
                     b.HasIndex("UserId");
 
@@ -208,24 +174,6 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("CleanMeUp.Domain.Model.UserOrder", b =>
-                {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId", "OrderId");
-
-                    b.HasIndex("OrderId");
-
-                    b.ToTable("UserOrder");
-                });
-
             modelBuilder.Entity("CleanMeUp.Domain.Model.Item", b =>
                 {
                     b.HasOne("CleanMeUp.Domain.Model.Order", null)
@@ -235,20 +183,8 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
 
             modelBuilder.Entity("CleanMeUp.Domain.Model.Order", b =>
                 {
-                    b.HasOne("CleanMeUp.Domain.Model.Address", "DeliveryAddress")
+                    b.HasOne("CleanMeUp.Domain.Model.User", "User")
                         .WithMany()
-                        .HasForeignKey("DeliveryAddressId");
-
-                    b.HasOne("CleanMeUp.Domain.Model.File", "File")
-                        .WithMany()
-                        .HasForeignKey("FileId");
-
-                    b.HasOne("CleanMeUp.Domain.Model.Address", "PickUpAddress")
-                        .WithMany()
-                        .HasForeignKey("PickUpAddressId");
-
-                    b.HasOne("CleanMeUp.Domain.Model.User", null)
-                        .WithMany("Orders")
                         .HasForeignKey("UserId");
                 });
 
@@ -257,21 +193,6 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.HasOne("CleanMeUp.Domain.Model.Address", "Address")
                         .WithMany()
                         .HasForeignKey("AddressId");
-                });
-
-            modelBuilder.Entity("CleanMeUp.Domain.Model.UserOrder", b =>
-                {
-                    b.HasOne("CleanMeUp.Domain.Model.Order", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CleanMeUp.Domain.Model.User", "User")
-                        .WithMany("UserOrders")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -8,17 +8,29 @@ using System.Threading.Tasks;
 
 namespace CleanMeUp.Domain.Service
 {
-    public class SignInQueryHandler : IRequestHandler<SignInQuery, User>
+    public class SignInQueryHandler : IRequestHandler<SignInQuery, CommandResult<UserData>>
     {
-        private readonly IRepository<User> _userRepository;
-        public SignInQueryHandler(IRepository<User> userRepository)
+        private readonly IRepository<User> _userRepository; 
+        private readonly IRepository<UserOrder> _userorderRepository;
+
+        public SignInQueryHandler(IRepository<User> userRepository, IRepository<UserOrder> userorderRepository)
         {
             _userRepository = userRepository;
+            _userorderRepository = userorderRepository;
         }
 
-        public async Task<User> Handle(SignInQuery request, CancellationToken cancellationToken)
+        public async Task<CommandResult<UserData>> Handle(SignInQuery request, CancellationToken cancellationToken)
         {
-            return await Task.FromResult(_userRepository.QueryAll().FirstOrDefault(u => u.Email == request.Email && u.Password == request.Password));
+            var user = _userRepository.QueryAllIncluding(a => a.Address).FirstOrDefault(u => u.Email == request.Email && u.Password == request.Password);
+            if (user == null)
+            {
+                return await Task.FromResult(CommandResult<UserData>.Fail("Fail to log in. Wrong email or password"));
+
+            }
+            var orders = _userorderRepository.QueryAll().Where(o => o.User.Id == user.Id)?.Select(p=> p.Order).ToList();
+            return await Task.FromResult(CommandResult<UserData>.Success(new UserData { Address = user.Address, FullName = user.FullName, Email = user.Email, Orders = orders}));
+
+
         }
     }
 }
