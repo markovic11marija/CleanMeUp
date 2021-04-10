@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const OrderCounter = ({ name, price, setOrder, order }) => {
+const OrderCounter = ({ id, name, price, setOrder, order }) => {
   const [count, setCount] = useState(0);
 
   return (
@@ -15,11 +15,12 @@ const OrderCounter = ({ name, price, setOrder, order }) => {
             setOrder({
               ...order,
               items: [
-                ...order.items.filter((i) => i.name !== name),
+                ...order.items.filter((i) => i.id !== id),
                 {
                   count: count - 1,
                   price: price * (count + 1),
                   name: name,
+                  id
                 },
               ],
             });
@@ -38,11 +39,12 @@ const OrderCounter = ({ name, price, setOrder, order }) => {
             setOrder({
               ...order,
               items: [
-                ...order.items.filter((i) => i.name !== name),
+                ...order.items.filter((i) => i.id !== id),
                 {
                   count: count + 1,
                   price: price * (count + 1),
                   name: name,
+                  id
                 },
               ],
             });

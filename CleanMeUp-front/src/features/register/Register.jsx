@@ -3,13 +3,17 @@ import { Link } from "react-router-dom";
 import { Tab, Tabs } from "react-bootstrap";
 import { Social } from "../login/social/Social";
 
-export const Register = () => {
+export const Register = (props) => {
     return (
         <>
             <div className="container" id="form-button">
                 <div className="row">
                     <div className="col-11" id="header-btn">
-                        <button className="log-in">Nazad</button>
+                        <button type="button" className="log-in" onClick={()=>{
+                            if(props) {
+                                props.previousStep();
+                            }
+                        }}>Nazad</button>
                     </div>
                 </div>
             </div>
@@ -75,7 +79,11 @@ export const Register = () => {
                                                     <td>
                                                         <ul className="list-unstyled d-flex justify-content-between button-style">
                                                             <li><button className="btn btn-primary no-background">Preskoči</button></li>
-                                                            <li><button className="btn btn-primary">Dalje</button></li>
+                                                            <li><button type="button" className="btn btn-primary" onClick={()=>{
+                                                                if(props) {
+                                                                    props.nextStep();
+                                                                }
+                                                            }}>Dalje</button></li>
                                                         </ul>
                                                     </td>
                                                 </tr>
@@ -89,7 +97,7 @@ export const Register = () => {
                                     </form>
                                 </Tab>
                                 <Tab eventKey="profile" title="Social Log-in">
-                                    <Social />
+                                    <Social  />
                                 </Tab>
                             </Tabs>
                         </div>    

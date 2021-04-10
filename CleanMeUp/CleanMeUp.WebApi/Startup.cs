@@ -41,6 +41,11 @@ namespace CleanMeUp.WebApi
             services.AddMediatR(
                 typeof(CommandResult<>).Assembly
             );
+
+            services.AddCors(x =>
+            {
+                x.AddDefaultPolicy(y => y.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,7 +72,7 @@ namespace CleanMeUp.WebApi
                 c.RoutePrefix = String.Empty;
             });
 
-
+            app.UseCors();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -76,6 +81,8 @@ namespace CleanMeUp.WebApi
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            
         }
 
         public void ConfigureContainer(ContainerBuilder builder)

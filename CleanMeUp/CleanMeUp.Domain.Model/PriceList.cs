@@ -2,7 +2,7 @@
 {
     public class PriceList:Entity
     {
-        public ClothesType ClothesType { get; set; }
+        public string ClothesType { get; set; }
         public decimal Price { get; set; }
     }
 }

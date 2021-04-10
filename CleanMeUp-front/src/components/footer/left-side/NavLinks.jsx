@@ -10,7 +10,7 @@ export const NavLinks = () => {
                     <Link to="/page/order">Naruči</Link>
                 </li>
                 <li>
-                    <Link to="/page/contact">Naruči</Link>
+                    <Link to="/page/contact">Kontakt</Link>
                 </li>
                 <li>
                     <Link to="/page/conditions">Uslovi Korišćenja</Link>

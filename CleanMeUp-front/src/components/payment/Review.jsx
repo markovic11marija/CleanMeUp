@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 const Review = (props) => {
   const [amount, setAmount] = useState();
-  const { order } = useSelector((state) => state.orderReducer);
+  const [order, setOrder] = useState({});
 
   useEffect(() => {
     let result = 0;
@@ -15,38 +15,88 @@ const Review = (props) => {
     setAmount(result);
   }, [props]);
 
-  return (
-    <div>
-      <h3>Pregled Porudzbine:</h3>
-      {props.order.items.map((item, i) => {
-        return (
-          <div key={`item-${i}`}>
-            <h6>
-              {item.name} - x{item.count}
-            </h6>
-          </div>
-        );
-      })}
-      <h3>Ukupno: {amount} rsd</h3>
+  useEffect(() => {
+    if(props.order) {
+      setOrder(props.order);
+    }
+  }, [props.order]);
 
-      <form method="POST" action="https://ecg.test.upc.ua/rbrs/enter">
-        <input type="hidden" value="1" name="Version" />
-        <input type="hidden" value="1756104" name="MerchantID" />
-        <input type="hidden" value="E7883944" name="TerminalID" />
-        <input type="hidden" value={`${amount}00`} name="TotalAmount" />
-        <input type="hidden" value="941" name="Currency" />
-        <input type="hidden" value="sr" name="locale" />
-        <input type="hidden" value={order.data} name="OrderID" />
-        
-        <input
-          type="hidden"
-          value={moment().format("YYMMDDhhmmss")}
-          name="PurchaseTime"
-        />
-        <input type="hidden" value="Cleaning" name="PurchaseDesc" />
-        <Button disabled={typeof order.data !== 'number'} type="submit">Zavrsi kupovinu</Button>
-      </form>
-    </div>
+  return (
+    <>
+    <div className="container" id="form-button">
+      <div className="row">
+          <div className="col-11" id="header-btn">
+              <button className="log-in" onClick={() => {
+                props.previousStep();
+              }}>Nazad</button>
+          </div>
+      </div>
+      </div>
+      <div className="container" id="form">
+          <div className="row" id="right-form">
+            <div className="col-7 mb-5">
+              <div className="right-header">
+                  <h4>Pregled porudžbine</h4>
+              </div>    
+              <div className="right-form-data">
+                  <div className="row justify-content-between">
+                    <div className="col-7">
+                      <div className="right-form-data">
+                        <div className="row justify-content-between">
+                          <div className="col-12 mb-5">
+                            <h5 className="mb-2">Usluga koju želite</h5>
+                            <ul className="ml-3">
+                              {order.services && order.services.map(x => {
+                                  return(
+                                    <li>{x.name}</li>
+                                  )
+                              })}
+                            </ul>
+                            
+                          </div>
+                          <div className="col-12">
+                            <h5 className="mb-2">Izabrana garderoba</h5>
+                            <table className="table" id="review-table">
+                              <thead>
+                                <th>Naziv</th>
+                                <th>Količina</th>
+                                <th>Cena</th>
+                              </thead>
+                              <tbody>
+                                {order.items && order.items.map(x => {
+                                  return(
+                                    <tr>
+                                      <td>{x.name}</td>
+                                      <td>{x.count}</td>
+                                      <td>{x.price}</td>
+                                    </tr>
+                                  )
+                                })}
+                                <tr className="font-weight-bold">
+                                  <td colSpan="2">Ukupno</td>
+                                  <td>
+                                    {amount}
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <Button disabled={!order || !order.items || !order.items.length || !order.services || !order.services.length}
+                             type="button" onClick={(e)=> {
+                               props.nextStep();
+                             }}>
+                                Završi kupovinu
+                          </Button>
+                        </div>
+                      </div>
+                        
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    </>
   );
 };
 

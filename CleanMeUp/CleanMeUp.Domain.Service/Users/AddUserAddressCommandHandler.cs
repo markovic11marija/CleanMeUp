@@ -22,7 +22,7 @@ namespace CleanMeUp.Domain.Service.Users
 
         public async Task<CommandResult<int>> Handle(AddUserAddressCommand request, CancellationToken cancellationToken)
         {
-            var address = new Address {Street = request.Street, District = request.District, HouseNumber = request.HouseNumber };
+            var address = new Address {Street = request.Street, District = request.District, Floor = request.Floor, Interphone = request.Interphone };
             var user = _userRepository.FindById(request.UserId);
             if (user == null)
             {

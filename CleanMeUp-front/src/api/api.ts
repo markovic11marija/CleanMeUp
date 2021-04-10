@@ -1,15 +1,16 @@
 import axios from "axios";
 import { ApiRequest } from "../interfaces/api/apiInterface";
+import store from "../store";
 
 export async function getData(request: ApiRequest) {
-  request.dispatch(request.startActionType());
+  store.dispatch(request.startActionType());
   try {
     const result = await axios(
       `${process.env.REACT_APP_API_URL}${request.url}`
     );
-    request.dispatch(request.successActionType(result.data));
+    store.dispatch(request.successActionType(result.data));
   } catch (err) {
-    request.dispatch(request.errorActionType(err));
+    store.dispatch(request.errorActionType(err));
   }
 }
 

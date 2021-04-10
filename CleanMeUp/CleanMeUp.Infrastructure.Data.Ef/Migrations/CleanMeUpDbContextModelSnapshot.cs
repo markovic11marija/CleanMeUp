@@ -133,13 +133,13 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.Property<string>("PaymentMethod")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("PickUpAddressId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ServiceId")
                         .HasColumnType("int");
 
                     b.Property<string>("Signature")
@@ -156,9 +156,31 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
 
                     b.HasIndex("PickUpAddressId");
 
+                    b.HasIndex("ServiceId");
+
                     b.HasIndex("UserId");
 
                     b.ToTable("Order");
+                });
+
+            modelBuilder.Entity("CleanMeUp.Domain.Model.OrderService", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderService");
                 });
 
             modelBuilder.Entity("CleanMeUp.Domain.Model.PriceList", b =>
@@ -168,8 +190,8 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ClothesType")
-                        .HasColumnType("int");
+                    b.Property<string>("ClothesType")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -177,6 +199,21 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PriceList");
+                });
+
+            modelBuilder.Entity("CleanMeUp.Domain.Model.Service", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Service");
                 });
 
             modelBuilder.Entity("CleanMeUp.Domain.Model.User", b =>
@@ -247,9 +284,20 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                         .WithMany()
                         .HasForeignKey("PickUpAddressId");
 
+                    b.HasOne("CleanMeUp.Domain.Model.Service", null)
+                        .WithMany("Orders")
+                        .HasForeignKey("ServiceId");
+
                     b.HasOne("CleanMeUp.Domain.Model.User", null)
                         .WithMany("Orders")
                         .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("CleanMeUp.Domain.Model.OrderService", b =>
+                {
+                    b.HasOne("CleanMeUp.Domain.Model.Order", null)
+                        .WithMany("Services")
+                        .HasForeignKey("OrderId");
                 });
 
             modelBuilder.Entity("CleanMeUp.Domain.Model.User", b =>

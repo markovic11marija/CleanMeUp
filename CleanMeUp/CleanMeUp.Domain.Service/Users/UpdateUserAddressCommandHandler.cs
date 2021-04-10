@@ -29,7 +29,8 @@ namespace CleanMeUp.Domain.Service.Users
 
             user.Address.Street = request.Street;
             user.Address.District = request.District;
-            user.Address.HouseNumber = request.HouseNumber;
+            user.Address.Floor = request.Floor;
+            user.Address.Interphone = request.Interphone;
             _unitOfWork.SaveChanges();
 
             return await Task.FromResult(CommandResult<int>.Success(user.Id));
