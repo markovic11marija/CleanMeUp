@@ -15,27 +15,27 @@ export async function getData(request: ApiRequest) {
 }
 
 export async function postData(request: ApiRequest) {
-  request.dispatch(request.startActionType());
+  store.dispatch(request.startActionType());
   try {
     const result = await axios.post(
       `${process.env.REACT_APP_API_URL}${request.url}`,
       { ...request.data }
     );
-    request.dispatch(request.successActionType(result.data));
+    store.dispatch(request.successActionType(result.data));
   } catch (err) {
-    request.dispatch(request.errorActionType(err));
+    store.dispatch(request.errorActionType(err));
   }
 }
 
 export async function putData(request: ApiRequest) {
-  request.dispatch(request.startActionType());
+  store.dispatch(request.startActionType());
   try {
     const result = await axios.put(
       `${process.env.REACT_APP_API_URL}${request.url}`,
       { ...request.data }
     );
-    request.dispatch(request.successActionType(result.data));
+    store.dispatch(request.successActionType(result.data));
   } catch (err) {
-    request.dispatch(request.errorActionType(err));
+    store.dispatch(request.errorActionType(err));
   }
 }

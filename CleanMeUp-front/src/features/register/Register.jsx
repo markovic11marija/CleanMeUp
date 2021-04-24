@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Tab, Tabs } from "react-bootstrap";
 import { Social } from "../login/social/Social";
+import { createUser } from "../../api/userApi";
+import { SuccessModal } from "../../components/successModal/SuccessModal";
 
 export const Register = (props) => {
+    const { insertedUser } = useSelector(state => state.userReducer);
+    const [user,setUser] = useState({
+        fullName: "",
+        email: "",
+        password: ""
+    });
+    const [openModal,setOpenModal] = useState(false);
+    const formRef = useRef();
+
+    const register = () => {       
+        createUser(user);
+    }
+
+    useEffect(()=>{
+        if(insertedUser) {
+            setOpenModal(true);
+            setTimeout(() => {
+                setOpenModal(false);
+            }, 2500);
+        }
+    }, [insertedUser])
+
     return (
         <>
             <div className="container" id="form-button">
@@ -31,24 +56,42 @@ export const Register = (props) => {
                     <div className="col-lg-6 col-md-12"  id="right-form">   
                         <div className="right-form-data">
                             <Tabs defaultActiveKey="appUser" transition={false} id="noanim-tab-example">
-                                <Tab eventKey="appUser" title="Log in">
-                                    <form action="" id="form-style">
+                                <Tab eventKey="appUser" title="Napravite Nalog">
+                                    <form ref={formRef} action="" id="form-style" onSubmit={(e)=>{
+                                        e.preventDefault();
+
+                                        if(user.fullName.length !== 0 && user.email.length !== 0 && user.password.length !== 0) {
+                                            register();
+                                        }
+                                    }}>
                                         <table>
                                             <tbody>
                                                 <tr className="spacing">
                                                     <td>
                                                         <label htmlFor="punoime">Puno Ime</label>
-                                                        <input type="text" className="form-control tabs" id="punoime" />
+                                                        <input type="text" required className="form-control tabs" name="punoime" onChange={(e)=>{
+                                                            setUser({...user, fullName: e.target.value})
+                                                        }}/>
                                                     </td>
                                                     <td className="email">
                                                         <label htmlFor="emailadresa">Email Adresa</label>
-                                                        <input type="email" className="form-control tabs" id="emailadresa" />
+                                                        <input type="email" required className="form-control tabs" name="emailadresa" onChange={(e)=>{
+                                                            setUser({...user, email: e.target.value})
+                                                        }}/>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <label htmlFor="vasasifra">Vaša Šifra</label>
-                                                        <input type="password" className="form-control tabs" id="vasasifra" />
+                                                        <input type="password" required className="form-control tabs" name="vasasifra" onChange={(e)=>{
+                                                            if(e.target.value.length > 8 && e.target.value.match(/^.*[A-Z]+.*$/)){
+                                                                setUser({...user, password: e.target.value});
+                                                                e.target.setCustomValidity("");
+                                                            } else {
+                                                                e.target.setCustomValidity("Morate uneti šifru.");
+                                                            }
+                                                            
+                                                        }}/>
                                                     </td>
                                                     <td>
                                                         <ul className="list-unstyled password-list">
@@ -60,7 +103,14 @@ export const Register = (props) => {
                                                 <tr className="re-password">
                                                     <td>
                                                         <label htmlFor="ponovite">Ponovite Šifru</label>
-                                                        <input type="password" className="form-control tabs" id="ponovite" />
+                                                        <input type="password" required className="form-control tabs" name="ponovite" onChange={(e)=>{
+                                                            if(e.target.value !== user.password){
+                                                                e.target.setCustomValidity("Šifre se ne poklapaju.");
+                                                            } else {
+                                                                e.target.setCustomValidity("");
+                                                            }
+                                                            
+                                                        }}/>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -79,11 +129,7 @@ export const Register = (props) => {
                                                     <td>
                                                         <ul className="list-unstyled d-flex justify-content-between button-style">
                                                             <li><button className="btn btn-primary no-background">Preskoči</button></li>
-                                                            <li><button type="button" className="btn btn-primary" onClick={()=>{
-                                                                if(props) {
-                                                                    props.nextStep();
-                                                                }
-                                                            }}>Dalje</button></li>
+                                                            <li><button type="submit" className="btn btn-primary">Dalje</button></li>
                                                         </ul>
                                                     </td>
                                                 </tr>
@@ -104,6 +150,7 @@ export const Register = (props) => {
                     </div>
                 </div>
             </div>
+            <SuccessModal open={openModal} handleClose={() => {}} text="Uspešno ste napravili nalog"/>
         </>
     );
 }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
 {
     [DbContext(typeof(CleanMeUpDbContext))]
-    [Migration("20210410192428_Initial")]
+    [Migration("20210424201013_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,8 +31,11 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.Property<string>("District")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("HouseNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("Floor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Interphone")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Street")
                         .HasColumnType("nvarchar(max)");
@@ -120,6 +123,9 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.Property<int?>("DeliveryAddressId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("DeliveryDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("DeliveryNote")
                         .HasColumnType("nvarchar(max)");
 
@@ -141,8 +147,8 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.Property<int?>("PickUpAddressId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ServiceId")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("PickupDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Signature")
                         .HasColumnType("nvarchar(max)");
@@ -157,8 +163,6 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.HasIndex("FileId");
 
                     b.HasIndex("PickUpAddressId");
-
-                    b.HasIndex("ServiceId");
 
                     b.HasIndex("UserId");
 
@@ -285,10 +289,6 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.HasOne("CleanMeUp.Domain.Model.Address", "PickUpAddress")
                         .WithMany()
                         .HasForeignKey("PickUpAddressId");
-
-                    b.HasOne("CleanMeUp.Domain.Model.Service", null)
-                        .WithMany("Orders")
-                        .HasForeignKey("ServiceId");
 
                     b.HasOne("CleanMeUp.Domain.Model.User", null)
                         .WithMany("Orders")

@@ -1,6 +1,10 @@
 import React from "react";
+import FacebookLogin from 'react-facebook-login';
 
 export const Social = () => {
+    const responseFacebook = (data) => {
+        console.log('dddd', data);
+    }
     return (
         <form action="" id="form-style">
             <table>
@@ -11,9 +15,12 @@ export const Social = () => {
                                 <p>Uloguj se uz pomoć</p>
                                 <div className="row">
                                     <div className="col-2">
-                                    <a href="https://www.facebook.com/">
-                                        <img src="/assets/img/facebook.png" alt="facebook"/>
-                                    </a>
+                                    <FacebookLogin
+                                    appId="920588745373994"
+                                    autoLoad={false}
+                                    fields="name,email,picture"
+                                    callback={responseFacebook}
+                                />
                                     </div>
                                     <div className="col-2">
                                     <a href="https://www.linkedin.com/">

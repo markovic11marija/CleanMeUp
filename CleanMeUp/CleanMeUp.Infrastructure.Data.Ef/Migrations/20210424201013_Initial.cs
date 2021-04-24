@@ -7,7 +7,7 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            Down(migrationBuilder);
+            this.Down(migrationBuilder);
             migrationBuilder.CreateTable(
                 name: "Address",
                 columns: table => new
@@ -15,7 +15,8 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Street = table.Column<string>(nullable: true),
-                    HouseNumber = table.Column<int>(nullable: false),
+                    Floor = table.Column<string>(nullable: true),
+                    Interphone = table.Column<string>(nullable: true),
                     District = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -108,6 +109,8 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PickUpAddressId = table.Column<int>(nullable: true),
                     DeliveryAddressId = table.Column<int>(nullable: true),
+                    PickupDate = table.Column<DateTime>(nullable: false),
+                    DeliveryDate = table.Column<DateTime>(nullable: false),
                     Phone = table.Column<string>(nullable: true),
                     BankReferenceId = table.Column<string>(nullable: true),
                     Signature = table.Column<string>(nullable: true),
@@ -117,7 +120,6 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     DeliveryNote = table.Column<string>(nullable: true),
                     PaymentMethod = table.Column<string>(nullable: true),
                     FileId = table.Column<int>(nullable: true),
-                    ServiceId = table.Column<int>(nullable: true),
                     UserId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -139,12 +141,6 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                         name: "FK_Order_Address_PickUpAddressId",
                         column: x => x.PickUpAddressId,
                         principalTable: "Address",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Order_Service_ServiceId",
-                        column: x => x.ServiceId,
-                        principalTable: "Service",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -243,11 +239,6 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                 column: "PickUpAddressId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Order_ServiceId",
-                table: "Order",
-                column: "ServiceId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Order_UserId",
                 table: "Order",
                 column: "UserId");
@@ -276,8 +267,8 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
             migrationBuilder.DropTable(
                 name: "Item");
 
-            //migrationBuilder.DropTable(
-            //    name: "OrderService");
+            migrationBuilder.DropTable(
+                name: "OrderService");
 
             migrationBuilder.DropTable(
                 name: "PriceList");
@@ -292,13 +283,13 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                 name: "File");
 
             migrationBuilder.DropTable(
-                name: "Service");
-
-            migrationBuilder.DropTable(
                 name: "User");
 
             migrationBuilder.DropTable(
                 name: "Address");
+
+            migrationBuilder.DropTable(
+                name: "Service");
         }
     }
 }

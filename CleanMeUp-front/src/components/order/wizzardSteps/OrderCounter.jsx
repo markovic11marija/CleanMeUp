@@ -8,7 +8,7 @@ const OrderCounter = ({ id, name, price, setOrder, order }) => {
       <h6 className="text-center">{name}</h6>
       <div>
         <button
-          disabled={count==0}
+          disabled={count===0}
           type="button"
           onClick={() => {
             setCount(count - 1);
