@@ -43,8 +43,7 @@ const OrderCounter = ({ id, name, price, setOrder, order }) => {
                 {
                   count: count + 1,
                   price: price * (count + 1),
-                  name: name,
-                  id
+                  name: name
                 },
               ],
             });

@@ -6,7 +6,7 @@ import { Social } from "../login/social/Social";
 import { createUser } from "../../api/userApi";
 import { SuccessModal } from "../../components/successModal/SuccessModal";
 
-export const Register = (props) => {
+export const Register = ({nextStep, previousStep}) => {
     const { insertedUser } = useSelector(state => state.userReducer);
     const [user,setUser] = useState({
         fullName: "",
@@ -25,6 +25,9 @@ export const Register = (props) => {
             setOpenModal(true);
             setTimeout(() => {
                 setOpenModal(false);
+                if(nextStep) {
+                    nextStep();
+                }
             }, 2500);
         }
     }, [insertedUser])
@@ -35,8 +38,8 @@ export const Register = (props) => {
                 <div className="row">
                     <div className="col-11" id="header-btn">
                         <button type="button" className="log-in" onClick={()=>{
-                            if(props) {
-                                props.previousStep();
+                            if(previousStep) {
+                                previousStep();
                             }
                         }}>Nazad</button>
                     </div>

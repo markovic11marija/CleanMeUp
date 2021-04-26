@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { districts } from "../../constants/districts";
 import { dateToString, timeToString } from "../../helpers/dateTimeHelper";
 import { newEmptyOrder } from "../../reducers/orderReducer";
 
@@ -15,7 +16,7 @@ export const Shop = (props) => {
             date.setHours(0,0,0);
             formatedDate += timeToString(date);
         }
-        return formatedDate;
+        return new Date(formatedDate).toJSON();
     }
     const formatTime = (value) => {
         const groups = value.match(/^(\d+):(\d+)$/);
@@ -34,7 +35,7 @@ export const Shop = (props) => {
         } else {
             formatedDate += timeToString(date)
         }
-        return formatedDate;
+        return new Date(formatedDate).toJSON();
     }
 
     useEffect(() => {
@@ -106,12 +107,23 @@ export const Shop = (props) => {
                                 <div className="col-12 d-flex">
                                     <div className="area">
                                         <label htmlFor="opstina">Opština</label>
-                                        <input type="text" className="form-control tabs" id="opstina" placeholder="Izaberi opštinu" defaultValue={order && order.pickUpAddress ? order.pickUpAddress.district : ""} onChange={(e) => {
+                                        <select className="form-control tabs" id="opstina" onChange={(e) => {
                                             setOrder({...order, pickUpAddress: {
                                                 ...order.pickUpAddress,
                                                 district: e.target.value
                                             }})
-                                        }}/>
+                                        }}>
+                                            <option value="0"> 
+                                                Izaberite opštinu
+                                            </option>
+                                            {districts.map((x, i) => {
+                                                return (
+                                                    <option key={i} value={x.name}> 
+                                                        {x.name}
+                                                    </option>
+                                                )
+                                            })}
+                                        </select>
                                     </div>
 
                                         <div className="date ml-3">

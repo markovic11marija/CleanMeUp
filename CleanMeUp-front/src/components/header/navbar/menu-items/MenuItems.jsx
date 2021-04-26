@@ -44,10 +44,14 @@ export const MenuItems = () => {
                                 <div className="position-absolute account-menu-options">
                                     <ul className="list-unstyled mt-0">
                                         <li>
-                                            <Link to="/account/orders">Porudžbine</Link>
+                                            <Link to="/account/orders" onClick={()=> {
+                                                setOpenAccount(false);
+                                            }}>Porudžbine</Link>
                                         </li>
                                         <li>
-                                            <Link to="/account/my">Moj Nalog</Link>
+                                            <Link to="/account/my" onClick={()=> {
+                                                setOpenAccount(false);
+                                            }}>Moj Nalog</Link>
                                         </li>
                                         <li>
                                             <span className="cursor-pointer" onClick={logout}>Log Out</span>

@@ -121,7 +121,7 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.Property<int?>("DeliveryAddressId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DeliveryDate")
+                    b.Property<DateTime?>("DeliveryDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DeliveryNote")
@@ -288,7 +288,7 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                         .WithMany()
                         .HasForeignKey("PickUpAddressId");
 
-                    b.HasOne("CleanMeUp.Domain.Model.User", null)
+                    b.HasOne("CleanMeUp.Domain.Model.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId");
                 });

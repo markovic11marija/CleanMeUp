@@ -68,11 +68,6 @@ const OrderDetails = (props) => {
               <div className="right-header">
                   <h4>Detalji porudžbine</h4>
                   <h5 className="mt-5 font-weight-bold">Izaberite garderobu koja je potrebna da Vam se očisti</h5>
-                  {(!order.items || !order.items.length) && (
-                       <div className="must">
-                        <p>*Obavezno polje </p>
-                      </div>
-                    )}
               </div>    
               <div className="right-form-data">
                   <div className="row justify-content-between">
@@ -91,11 +86,6 @@ const OrderDetails = (props) => {
                   </div>
                   <div className="mt-5">
                     <h5 className="font-weight-bold">Usluga koju želite</h5>
-                    {(!order.services || !order.services.length) && (
-                       <div className="must">
-                        <p>*Obavezno polje </p>
-                      </div>
-                    )}
                     <div className="row mt-5">
                       <div className="col-12 d-flex justify-content-between">
                         {serviceList.map(service => {

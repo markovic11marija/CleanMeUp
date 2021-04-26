@@ -10,7 +10,6 @@ import { Shop } from "../../../features/shop/Shop.jsx";
 
 export const MainHeader = ({children}) => {
     const  { path } = useRouteMatch();
-console.log(path)
     return (
         <div className="container-fluid" id="header">
             <Navbar/>

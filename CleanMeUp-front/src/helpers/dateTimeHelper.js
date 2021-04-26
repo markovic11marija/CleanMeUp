@@ -10,3 +10,8 @@ const zeroPrefix = (number) => {
     }
     return number;
 }
+
+export const formatDateTime = (text) => {
+    const date = new Date(text);
+    return `${zeroPrefix(date.getDate())}/${zeroPrefix(date.getMonth()+1)}/${date.getFullYear()} ${zeroPrefix(date.getHours())}:${zeroPrefix(date.getMinutes())}`;
+}

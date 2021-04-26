@@ -79,7 +79,7 @@ export const AppUser = () => {
                     </tr>
                     <tr>
                         <td className="log-in-btn">
-                            <Button type="button" className="btn tabs" onClick={login}>Naruči</Button>
+                            <Button type="button" className="btn tabs" onClick={login}>Log in</Button>
                         </td>
                     </tr>
                     <tr>

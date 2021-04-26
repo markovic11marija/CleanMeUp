@@ -27,8 +27,10 @@ export const newEmptyOrder = () => {
   }
 }
 export const initialState = {
-  order: { status: PENDING, data: [] },
-  newOrder: {...newEmptyOrder()}
+  orders: { status: PENDING, data: [] },
+  newOrder: {...newEmptyOrder()},
+  updatedPaymentType: {status: PENDING, data: null},
+  insertedOrderId: { status: PENDING, data: null },
 };
 
 export default (state = initialState, action) => {
@@ -41,17 +43,50 @@ export default (state = initialState, action) => {
     case actions.ORDER_POST_START:
       return {
         ...state,
-        order: { status: LOADING, data: [] },
+        insertedOrderId: { status: LOADING, data: null },
       };
     case actions.ORDER_POST_SUCCESS:
       return {
         ...state,
-        order: { status: LOADED, data: action.order },
+        insertedOrderId: { status: LOADED, data: action.payload },
+        updatedPaymentType: {status: PENDING, data: null},
       };
     case actions.ORDER_POST_ERROR:
       return {
         ...state,
-        order: { status: ERROR, data: [] },
+        insertedOrderId: { status: ERROR, data: null },
+      };
+    case actions.ORDERS_GET_START:
+      return {
+        ...state,
+        orders: { status: LOADING, data: [] },
+        updatedPaymentType: {status: PENDING, data: null},
+        insertedOrderId: { status: PENDING, data: null },
+      };
+    case actions.ORDERS_GET_SUCCESS:
+      return {
+        ...state,
+        orders: { status: LOADED, data: action.payload },
+      };
+    case actions.ORDERS_GET_ERROR:
+      return {
+        ...state,
+        orders: { status: ERROR, data: [] },
+      };
+    case actions.ORDER_PAYMENT_TYPE_START:
+      return {
+        ...state,
+        updatedPaymentType: { status: LOADING, data: [] },
+      };
+    case actions.ORDER_PAYMENT_TYPE_SUCCESS:
+      return {
+        ...state,
+        updatedPaymentType: { status: LOADED, data: true },
+      };
+    case actions.ORDER_PAYMENT_TYPE_ERROR:
+      return {
+        ...state,
+        updatedPaymentType: { status: ERROR, data: [] },
       };
     default:
       return state;

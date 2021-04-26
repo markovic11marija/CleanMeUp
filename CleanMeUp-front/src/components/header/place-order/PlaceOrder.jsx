@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { orderDataSave } from "../../../actions/orderActions";
+import { districts } from "../../../constants/districts";
 import store from "../../../store";
 
 export const PlaceOrder = () => {
@@ -50,12 +51,23 @@ export const PlaceOrder = () => {
                         </div>
                         <div className="col-auto">
                             <label htmlFor="opstina">Opština</label>
-                            <input type="text" className="form-control tabs" id="opstina" placeholder="Izaberite opštinu" onChange={(e) => {
+                            <select className="form-control tabs" id="opstina" onChange={(e) => {
                                 setOrder({...order, pickUpAddress: {
                                     ...order.pickUpAddress,
                                     district: e.target.value
                                 }})
-                            }}/>
+                            }}>
+                                <option value="0"> 
+                                    Izaberite opštinu
+                                </option>
+                                {districts.map((x, i) => {
+                                    return (
+                                        <option key={i} value={x.name}> 
+                                            {x.name}
+                                        </option>
+                                    )
+                                })}
+                            </select>
                         </div>
 
                         <div className="col-auto">

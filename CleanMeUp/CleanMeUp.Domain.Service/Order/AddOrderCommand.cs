@@ -17,9 +17,9 @@ namespace CleanMeUp.Domain.Service
         public string Note { get; set; }
         public string DeliveryNote { get; set; }
         public string FileName { get; set; }
-        public byte[] FileInBytes { get; set; }
+        public string FileInBytes { get; set; }
         public DateTime PickupDate { get; set; }
-        public DateTime DeliveryDate { get; set; }
+        public DateTime? DeliveryDate { get; set; }
 
     }
 }

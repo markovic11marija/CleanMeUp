@@ -46,9 +46,9 @@ const Review = (props) => {
                           <div className="col-12 mb-5">
                             <h5 className="mb-2">Usluga koju želite</h5>
                             <ul className="ml-3">
-                              {order.services && order.services.map(x => {
+                              {order.services && order.services.map((x,i) => {
                                   return(
-                                    <li>{x.name}</li>
+                                    <li key={i}>{x.name}</li>
                                   )
                               })}
                             </ul>
@@ -57,15 +57,15 @@ const Review = (props) => {
                           <div className="col-12">
                             <h5 className="mb-2">Izabrana garderoba</h5>
                             <table className="table" id="review-table">
-                              <thead>
-                                <th>Naziv</th>
-                                <th>Količina</th>
-                                <th>Cena</th>
-                              </thead>
                               <tbody>
-                                {order.items && order.items.map(x => {
+                                <tr>
+                                  <th>Naziv</th>
+                                  <th>Količina</th>
+                                  <th>Cena</th>
+                                </tr>
+                                {order.items && order.items.map((x,i) => {
                                   return(
-                                    <tr>
+                                    <tr key={i}>
                                       <td>{x.name}</td>
                                       <td>{x.count}</td>
                                       <td>{x.price}</td>

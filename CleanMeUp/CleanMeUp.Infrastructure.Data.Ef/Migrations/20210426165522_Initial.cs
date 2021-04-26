@@ -7,7 +7,7 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            this.Down(migrationBuilder);
+            Down(migrationBuilder);
             migrationBuilder.CreateTable(
                 name: "Address",
                 columns: table => new
@@ -110,7 +110,7 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     PickUpAddressId = table.Column<int>(nullable: true),
                     DeliveryAddressId = table.Column<int>(nullable: true),
                     PickupDate = table.Column<DateTime>(nullable: false),
-                    DeliveryDate = table.Column<DateTime>(nullable: false),
+                    DeliveryDate = table.Column<DateTime>(nullable: true),
                     Phone = table.Column<string>(nullable: true),
                     BankReferenceId = table.Column<string>(nullable: true),
                     Signature = table.Column<string>(nullable: true),
@@ -274,6 +274,9 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                 name: "PriceList");
 
             migrationBuilder.DropTable(
+                name: "Service");
+
+            migrationBuilder.DropTable(
                 name: "UserOrder");
 
             migrationBuilder.DropTable(
@@ -287,9 +290,6 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
 
             migrationBuilder.DropTable(
                 name: "Address");
-
-            migrationBuilder.DropTable(
-                name: "Service");
         }
     }
 }

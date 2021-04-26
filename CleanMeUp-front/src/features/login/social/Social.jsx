@@ -1,9 +1,12 @@
 import React from "react";
 import FacebookLogin from 'react-facebook-login';
+import InstagramLogin from "react-instagram-login";
 
 export const Social = () => {
     const responseFacebook = (data) => {
-        console.log('dddd', data);
+    }
+    const responseInstagram = () => {
+
     }
     return (
         <form action="" id="form-style">
@@ -14,28 +17,22 @@ export const Social = () => {
                             <div className="social-log-in">
                                 <p>Uloguj se uz pomoć</p>
                                 <div className="row">
-                                    <div className="col-2">
-                                    <FacebookLogin
-                                    appId="920588745373994"
-                                    autoLoad={false}
-                                    fields="name,email,picture"
-                                    callback={responseFacebook}
-                                />
+                                    <div className="col-12">
+                                        <FacebookLogin
+                                            appId="920588745373994"
+                                            autoLoad={false}
+                                            fields="name,email,picture"
+                                            callback={responseFacebook}
+                                        />
                                     </div>
-                                    <div className="col-2">
-                                    <a href="https://www.linkedin.com/">
-                                        <img src="/assets/img/linkedin.png" alt="linkdin"/>
-                                    </a>
+                                    <div className="col-12 mt-3">
+                                        <InstagramLogin
+                                            clientId="5fd2f11482844c5eba963747a5f34556"
+                                            onSuccess={responseInstagram}
+                                        />
                                     </div>
                                 </div>
                             </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul className="list-unstyled d-flex justify-content-between button-style">
-                                <li><button className="btn tabs">Log in</button></li>
-                            </ul>
                         </td>
                     </tr>
                 </tbody>

@@ -6,6 +6,7 @@ import OrderDetails from "./wizzardSteps/OrderDetails";
 import { useSelector } from 'react-redux';
 import { Payment } from "../../features/payment/Payment";
 import { Register } from "../../features/register/Register";
+import { isLoggedIn } from "../../helpers/authHelper";
 
 const Order = () => {
   const [order, setOrder] = useState({ items: [] });
@@ -26,7 +27,7 @@ const Order = () => {
             <OrderDetails setOrder={setOrder} order={order} />
             <Shop setOrder={setOrder} order={order} />
             <Review order={order} />
-            {!localStorage.getItem('token') && (<Register/>)}
+            {!isLoggedIn() && (<Register/>)}
             <Payment setOrder={setOrder} order={order}/>
           </StepWizard>
         </div>

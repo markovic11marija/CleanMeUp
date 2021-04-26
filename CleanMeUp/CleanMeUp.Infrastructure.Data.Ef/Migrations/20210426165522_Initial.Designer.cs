@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
 {
     [DbContext(typeof(CleanMeUpDbContext))]
-    [Migration("20210424201013_Initial")]
+    [Migration("20210426165522_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -123,7 +123,7 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.Property<int?>("DeliveryAddressId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DeliveryDate")
+                    b.Property<DateTime?>("DeliveryDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DeliveryNote")
@@ -290,7 +290,7 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                         .WithMany()
                         .HasForeignKey("PickUpAddressId");
 
-                    b.HasOne("CleanMeUp.Domain.Model.User", null)
+                    b.HasOne("CleanMeUp.Domain.Model.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId");
                 });

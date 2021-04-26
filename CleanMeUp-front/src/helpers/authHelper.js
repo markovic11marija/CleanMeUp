@@ -1,7 +1,8 @@
+import { removeAcceptCookie } from "./cookieHelper";
+
 const storageKey = "user";
 
 export const isLoggedIn = () => {
-    console.log(localStorage.getItem(storageKey))
     return localStorage.getItem(storageKey) !== "" && localStorage.getItem(storageKey) !== null;
 }
 
@@ -23,4 +24,5 @@ export const storeLoggedUser = (user) => {
 
 export const logoutUser = () => {
     localStorage.removeItem(storageKey);
+    removeAcceptCookie();
 }

@@ -10,7 +10,7 @@ namespace CleanMeUp.Domain.Model
         public Address PickUpAddress { get; set; }
         public Address DeliveryAddress { get; set; }
         public DateTime PickupDate { get; set; }
-        public DateTime DeliveryDate { get; set; }
+        public DateTime? DeliveryDate { get; set; }
         public string Phone { get; set; }
         public string BankReferenceId { get; set; }
         public string Signature { get; set; }
@@ -20,7 +20,7 @@ namespace CleanMeUp.Domain.Model
         public string DeliveryNote { get; set; }
         public string PaymentMethod { get; set; }
         public File File { get; set; }
-
+        public User User { get; set; }
 
         public string ReturnItems() {
             var items = "";

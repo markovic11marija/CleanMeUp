@@ -35,8 +35,15 @@ namespace CleanMeUp.WebApi.Controllers
             return Ok(await _mediator.Send(query));
         }
 
-        [HttpPost]
+        [HttpGet]
+        [Route("by-user-id/{id}")]
+        public async Task<ActionResult<CommandResult<OrderData>>> GetByUserId(int id)
+        {
+            return Ok(await _mediator.Send(new GetOrderByUserIdQuery { UserId = id}));
+        }
 
+        [HttpPost]
+        [Route("insert")]
         public async Task<ActionResult<CommandResult<int>>> Add([FromBody]AddOrderCommand command)
         {
             var result = await _mediator.Send(command);
@@ -62,7 +69,7 @@ namespace CleanMeUp.WebApi.Controllers
 
         [HttpPost]
         [Route("cash-on-delivery")]
-        public async Task<ActionResult<CommandResult<CommandEmptyResult>>> CashOnDeliveryOrder([FromForm] CashOnDeliveryOrderCommand command)
+        public async Task<ActionResult<CommandResult<CommandEmptyResult>>> CashOnDeliveryOrder([FromBody] CashOnDeliveryOrderCommand command)
         {
             var result = await _mediator.Send(command);
 
