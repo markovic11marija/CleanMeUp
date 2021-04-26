@@ -6,7 +6,7 @@ export const Addresses = ({user, address, setAddress}) => {
         {user && (
             <div id="header-form" className="row">
                 <div className="col-8">
-                    <form className="row g-3">
+                    <div className="row g-3">
                         <div className="col-auto">
                         <label htmlFor="vasaadresa">Ulica i Broj</label>
                         <input type="text" className="form-control tabs" id="ulicabroj" placeholder="" defaultValue={user.address.street} onChange={(e)=>{
@@ -42,7 +42,7 @@ export const Addresses = ({user, address, setAddress}) => {
                                 })}
                             </select>
                         </div>
-                    </form> 
+                    </div> 
                 </div>     
             </div>
         )}

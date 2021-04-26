@@ -65,7 +65,7 @@ export const Account = () => {
                         setActiveTab(key);
                     }}>
                         <Tab eventKey="account" title="Moj Nalog">
-                            <form action="" id="form-style" className="w-50">
+                            <div id="form-style" className="w-50">
                                 <table>
                                     <tbody>
                                         <tr className="spacing">
@@ -105,7 +105,7 @@ export const Account = () => {
                                         </tr>
                                     </tbody>
                                 </table>
-                            </form>
+                            </div>
                         </Tab>
                         <Tab eventKey="addresses" title="Moje Adrese">
                             <Addresses user={user} address={address} setAddress={setAddress}/>                  

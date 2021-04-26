@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { Tab, Tabs } from "react-bootstrap";
-import { Social } from "../login/social/Social";
+import { useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 import { createUser } from "../../api/userApi";
 import { SuccessModal } from "../../components/successModal/SuccessModal";
+import { Social } from "../login/social/Social";
 
 export const Register = ({nextStep, previousStep}) => {
+    const history = useHistory();
     const { insertedUser } = useSelector(state => state.userReducer);
     const [user,setUser] = useState({
         fullName: "",
@@ -27,6 +28,8 @@ export const Register = ({nextStep, previousStep}) => {
                 setOpenModal(false);
                 if(nextStep) {
                     nextStep();
+                } else {
+                    history.push("/page/login/app-user");
                 }
             }, 2500);
         }
@@ -120,10 +123,12 @@ export const Register = ({nextStep, previousStep}) => {
                                                     <td className="check-box"> 
                                                         <ul className="list-unstyled check-style">
                                                             <li>
-                                                                <div className="form-check d-flex justify-content-between align-items-center">
-                                                                <input className="form-check-input checkbox-style" type="checkbox" value="" id="prihvatam" />
-                                                                <label className="form-check-label" htmlFor="prihvatam">
-                                                                    Prihvatam uslove poslovanja CleanMeUp </label></div>
+                                                                <label className="checkmark-container"> Prihvatam uslove poslovanja CleanMeUp
+                                                                    <input required type="checkbox" onChange={(e)=> {
+                                                                        setUser({...user, conditions: e.target.checked})
+                                                                    }}/>
+                                                                    <span className="checkmark"></span>
+                                                                </label>
                                                             </li>
                                                         </ul>
                                                     </td>
@@ -132,7 +137,7 @@ export const Register = ({nextStep, previousStep}) => {
                                                     <td>
                                                         <ul className="list-unstyled d-flex justify-content-between button-style">
                                                             <li><button className="btn btn-primary no-background">Preskoči</button></li>
-                                                            <li><button type="submit" className="btn btn-primary">Dalje</button></li>
+                                                            <li><button type="submit" className="btn btn-primary" disabled={!user.conditions}>Dalje</button></li>
                                                         </ul>
                                                     </td>
                                                 </tr>

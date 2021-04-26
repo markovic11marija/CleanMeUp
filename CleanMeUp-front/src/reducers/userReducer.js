@@ -15,6 +15,8 @@ export default (state = initialState, action) => {
         case actions.GET_USER_START:
             return {
                 ...state,
+                insertedUser: null,
+                loggedUser: null,
                 status: LOADING
             }
         case actions.GET_USER_ERROR:

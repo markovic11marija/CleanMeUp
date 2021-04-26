@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, NavLink, useHistory } from "react-router-dom";
+import { getUserStarted } from "../../../../actions/userActions";
 import { getLoggedUser, isLoggedIn, logoutUser } from "../../../../helpers/authHelper";
+import store from "../../../../store";
 import { SuccessModal } from "../../../successModal/SuccessModal";
 
 export const MenuItems = () => {
@@ -9,6 +11,7 @@ export const MenuItems = () => {
     const [openAccount, setOpenAccount] = useState(false);
 
     const logout = () => {
+        store.dispatch(getUserStarted());
         logoutUser();
         setOpenSuccess(true);
         setTimeout(()=>{
@@ -63,10 +66,10 @@ export const MenuItems = () => {
                     </>
                 ) : (<>
                     <li>
-                        <Link id="order-btn" to="/page/order" activeClassName="activeRoute" exact={true}>Naruči</Link>
+                        <NavLink id="order-btn" to="/page/order" activeClassName="activeRoute" exact={true}>Naruči</NavLink>
                     </li>
                     <li>
-                        <Link className="log-in" to="/page/login/app-user" activeClassName="activeRoute" exact={true}>Log in</Link>
+                        <NavLink className="log-in" to="/page/login/app-user" activeClassName="activeRoute" exact={true}>Log in</NavLink>
                     </li>
                 </>)}
                 

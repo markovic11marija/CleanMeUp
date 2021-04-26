@@ -27,7 +27,7 @@ export const Question = () => {
                 <div className="row questions">
                     {questions.map((x,i) => {
                         return (
-                            <div className="col-lg-12 col-md-12 single-question mb-4" onClick={()=> {
+                            <div key={i} className="col-lg-12 col-md-12 single-question mb-4" onClick={()=> {
                                 setOpenedAnswer(i === openedAnswer? null : i);
                             }}>
                                 <div className="question-tab d-flex">

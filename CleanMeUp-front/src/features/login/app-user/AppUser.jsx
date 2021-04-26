@@ -6,10 +6,10 @@ import { getUserError } from "../../../actions/userActions";
 import { getUser } from "../../../api/userApi";
 import { ErrorModal } from "../../../components/errorModal/ErrorModal";
 import { SuccessModal } from "../../../components/successModal/SuccessModal";
-import { storeLoggedUser } from "../../../helpers/authHelper";
+import { getLoggedUser, isLoggedIn, storeLoggedUser } from "../../../helpers/authHelper";
 import store from "../../../store";
 
-export const AppUser = () => {
+export const AppUser = ({nextStep}) => {
     const history = useHistory();
     const { loggedUser, failureReason } = useSelector(state => state.userReducer);
     const [openSuccessModal, setOpenSuccessModal] = useState(false);
@@ -28,10 +28,18 @@ export const AppUser = () => {
         if(loggedUser) {
             storeLoggedUser(loggedUser);
             setOpenSuccessModal(true);
-            setTimeout(()=> {
+            const interval = setInterval(()=> {
                 setOpenSuccessModal(false);
-                history.push("/account/my");
-            }, 1500)
+                if(nextStep) {
+                    nextStep();
+                    clearInterval(interval);
+                } else {
+                    if(isLoggedIn()) {
+                        history.push("/account/my");
+                        clearInterval(interval);
+                    }
+                }
+            }, 1000)
         }
     }, [loggedUser])
 
@@ -79,7 +87,7 @@ export const AppUser = () => {
                     </tr>
                     <tr>
                         <td className="log-in-btn">
-                            <Button type="button" className="btn tabs" onClick={login}>Log in</Button>
+                            <Button type="button" className="btn tabs" onClick={login}>{nextStep? "Dalje" : "Log in"}</Button>
                         </td>
                     </tr>
                     <tr>

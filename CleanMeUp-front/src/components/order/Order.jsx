@@ -7,6 +7,9 @@ import { useSelector } from 'react-redux';
 import { Payment } from "../../features/payment/Payment";
 import { Register } from "../../features/register/Register";
 import { isLoggedIn } from "../../helpers/authHelper";
+import { Login } from "../../features/login/Login";
+import { AppUser } from "../../features/login/app-user/AppUser";
+import { Tab, Tabs } from "react-bootstrap";
 
 const Order = () => {
   const [order, setOrder] = useState({ items: [] });
@@ -28,6 +31,9 @@ const Order = () => {
             <Shop setOrder={setOrder} order={order} />
             <Review order={order} />
             {!isLoggedIn() && (<Register/>)}
+            
+            {!isLoggedIn() && (<Login/>)}
+
             <Payment setOrder={setOrder} order={order}/>
           </StepWizard>
         </div>

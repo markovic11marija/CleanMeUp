@@ -36,9 +36,9 @@ export const AccountOrders = () => {
                     <li><h4>Moje Porudžbine</h4></li>
                 </ul>
             </div>
-            {allOrders.map(x => {
+            {allOrders.map((x,i) => {
                 return (
-                    <div className="order-tabs">
+                    <div key={i} className="order-tabs">
                         <div className="right-order-tab d-flex justify-content-end align-items-center">
                             <ul className="list-unstyled d-flex">
                                 <li><i className="fa fa-circle"></i></li>

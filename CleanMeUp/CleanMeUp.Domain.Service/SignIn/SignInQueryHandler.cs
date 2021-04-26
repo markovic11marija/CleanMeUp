@@ -27,8 +27,7 @@ namespace CleanMeUp.Domain.Service
                 return await Task.FromResult(CommandResult<UserData>.Fail("Fail to log in. Wrong email or password"));
 
             }
-            var orders = _userorderRepository.QueryAll().Where(o => o.User.Id == user.Id)?.Select(p=> p.Order).ToList();
-            return await Task.FromResult(CommandResult<UserData>.Success(new UserData { Id= user.Id, Address = user.Address, FullName = user.FullName, Email = user.Email, Orders = orders}));
+            return await Task.FromResult(CommandResult<UserData>.Success(new UserData { Id= user.Id, Address = user.Address, FullName = user.FullName, Email = user.Email}));
         }
     }
 }
