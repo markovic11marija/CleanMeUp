@@ -26,7 +26,10 @@ namespace CleanMeUp.Domain.Service.Users
                 return await Task.FromResult(CommandResult<int>.Fail("User with this ID does not exist."));
 
             }
-
+            if(user.Address == null)
+            {
+                user.Address = new Address();
+            }
             user.Address.Street = request.Street;
             user.Address.District = request.District;
             user.Address.Floor = request.Floor;

@@ -25,7 +25,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 1074px;
-   
+}
+.account-header {
+    background-image:url("scss/img/violet.svg") !important;
 }
 
 #header-menu {
@@ -38,6 +40,11 @@ body {
     margin-right: 10px;
     img{
         padding: 5px;
+    }
+}
+#logo-wrapper {
+    a {
+        color : #fff;
     }
 }
 #menu-list {
@@ -265,6 +272,10 @@ h1 span {
       }
   }
 }
+
+.question-answer {
+    color: $paragraphcolor;
+}
 #order-wrapper {
     line-height: 90px; 
     padding: 90px 0px;
@@ -483,6 +494,9 @@ h1 span {
         font-size: 28px;
     }
 }
+.account-right-form {
+    margin-top: 55px !important;
+}
 
 .payment-header {
     max-width:356px;
@@ -684,8 +698,12 @@ h1 span {
     width: 1px;
     height: 30px;
 }
+.account-menu-wrapper {
+    border-left: 1px solid #fff;
+    padding-left: 30px;
+}
  .account{
-     width: 50%;
+    width: 50%; 
     p {
         font-size: 18px;
     }
@@ -703,6 +721,28 @@ h1 span {
             color: #fff;
          }
      }
+ }
+
+ .account-menu-options {
+    left: -50px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 4px 4px 6px #00000041;
+    border-radius: 5px;
+    width: 228px;
+    padding: 32px 37px;
+    font-weight: bold;
+    z-index: 3;
+    color: $paragraphcolor !important;
+    li:nth-child(2) {
+        padding: 24px 0px;
+    }
+    li:nth-child(3) {
+        border-top: 1px solid $bordercolorlight;
+        padding-top: 24px;
+    }
+    a {
+        color: $paragraphcolor !important;
+    }
  }
  .btn-third {
    padding:12px 67px;
@@ -983,6 +1023,7 @@ h1 span {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 3;
     background-color: rgba(59,59,59,0.47);
     width: 100vw;
     height: 100vh;
@@ -1004,6 +1045,9 @@ h1 span {
             font-weight: bold;
             margin-bottom: 41px;
         }
+        p.error-text {
+            color: $errorcolor;
+        }
         div[role="status"] {
             border: 7px solid $h3color;
             border-right-color: transparent;
@@ -1018,4 +1062,7 @@ h1 span {
             width: 100px;
         }
     }
+}
+.cursor-pointer {
+    cursor: pointer;
 }

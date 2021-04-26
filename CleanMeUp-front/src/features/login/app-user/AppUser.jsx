@@ -1,11 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
+import { getUserError } from "../../../actions/userActions";
 import { getUser } from "../../../api/userApi";
+import { ErrorModal } from "../../../components/errorModal/ErrorModal";
+import { SuccessModal } from "../../../components/successModal/SuccessModal";
+import { storeLoggedUser } from "../../../helpers/authHelper";
+import store from "../../../store";
 
 export const AppUser = () => {
-    const { loggedUser } = useSelector(state => state.userReducer);
+    const history = useHistory();
+    const { loggedUser, failureReason } = useSelector(state => state.userReducer);
+    const [openSuccessModal, setOpenSuccessModal] = useState(false);
+    const [openErrorModal, setOpenErrorModal] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
     const [user, setUser] = useState({});
 
     const login = () => {
@@ -17,11 +26,25 @@ export const AppUser = () => {
 
     useEffect(()=> {
         if(loggedUser) {
-            localStorage.setItem('user', JSON.stringify(loggedUser))
+            storeLoggedUser(loggedUser);
+            setOpenSuccessModal(true);
+            setTimeout(()=> {
+                setOpenSuccessModal(false);
+                history.push("/account/my");
+            }, 1500)
         }
     }, [loggedUser])
 
+    useEffect(()=> {
+        if(failureReason) {
+            setErrorMessage(failureReason);
+            setOpenErrorModal(true);
+            store.dispatch(getUserError(""));
+        }
+    },[failureReason])
+
     return (
+        <>
         <form action="" id="form-style">
             <table>
                 <tbody>
@@ -67,5 +90,8 @@ export const AppUser = () => {
                 </tbody>
             </table>
         </form>
+        <ErrorModal open={openErrorModal} handleClose={() => setOpenErrorModal(false)} text={errorMessage}/>
+        <SuccessModal open={openSuccessModal} handleClose={() => {}} text={"Uspešno ste se ulogovali"}/>
+        </>
     );
 }

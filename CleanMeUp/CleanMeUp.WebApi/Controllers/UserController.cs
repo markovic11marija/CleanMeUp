@@ -27,6 +27,12 @@ namespace CleanMeUp.WebApi.Controllers
             return Ok(await _mediator.Send(new SignInQuery(email, password)));
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CommandResult<UserData>>> GetUser(int id)
+        {
+            return Ok(await _mediator.Send(new SignInUserQuery(id)));
+        }
+
         [HttpPost]
         public async Task<ActionResult<CommandResult<int>>> Add([FromBody] AddUserCommand command)
         {
@@ -54,6 +60,18 @@ namespace CleanMeUp.WebApi.Controllers
         [Route("update-address")]
         public async Task<ActionResult<CommandResult<int>>> UpdateAddress([FromBody] UpdateUserAddressCommand command)
         {
+            var result = await _mediator.Send(command);
+
+            if (result.IsSuccess)
+                return Ok(result.Payload);
+
+            return BadRequest(result.FailureReason);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<CommandResult<int>>> Update(int id, [FromBody] UpdateUserCommand command)
+        {
+            command.UserId = id;
             var result = await _mediator.Send(command);
 
             if (result.IsSuccess)
