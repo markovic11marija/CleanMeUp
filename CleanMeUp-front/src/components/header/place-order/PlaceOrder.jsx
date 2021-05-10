@@ -33,7 +33,7 @@ export const PlaceOrder = () => {
                         </div>
                         <div className="col-auto">
                             <label htmlFor="sprat">Sprat</label>
-                            <input type="number" className="form-control tabs" id="sprat" placeholder="-" onChange={(e) => {
+                            <input type="number" min="0" className="form-control tabs" id="sprat" placeholder="-" onChange={(e) => {
                                 setOrder({...order, pickUpAddress: {
                                     ...order.pickUpAddress,
                                     floor: e.target.value
@@ -72,7 +72,7 @@ export const PlaceOrder = () => {
 
                         <div className="col-auto">
                             <label htmlFor="brojtelefona" className="visually-hidden">Broj Telefona</label>
-                            <input type="number" className="form-control tabs" id="brojtelefona" placeholder="+381 XX XXX XXX" onChange={(e) => {
+                            <input type="number" min="0" className="form-control tabs" id="brojtelefona" placeholder="+381 XX XXX XXX" onChange={(e) => {
                                 setOrder({...order, phone: e.target.value })
                             }}/>
                         </div>

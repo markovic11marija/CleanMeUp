@@ -77,7 +77,7 @@ export const Shop = (props) => {
 
                                     <div className="floor ml-3">
                                         <label htmlFor="sprat">Sprat</label>
-                                        <input type="number" className="form-control tabs" id="sprat" placeholder="-" defaultValue={order && order.pickUpAddress ? order.pickUpAddress.floor : ""} onChange={(e) => {
+                                        <input type="number" min="0" className="form-control tabs" id="sprat" placeholder="-" defaultValue={order && order.pickUpAddress ? order.pickUpAddress.floor : ""} onChange={(e) => {
                                             setOrder({...order, pickUpAddress: {
                                                 ...order.pickUpAddress,
                                                 floor: e.target.value
@@ -172,10 +172,13 @@ export const Shop = (props) => {
                                 </div>
                                 <div className="row">
                                     <div className="col-12">
-                                        <button type="button"className="btn btn-primary" onClick={()=>{
-                                            props.setOrder(order);
-                                            props.nextStep();
-                                        }}>
+                                        <button type="button" className="btn btn-primary" 
+                                            disabled={!order.pickUpDate || !order.deliveryAddress || !order.pickUpAddress || !order.pickUpAddress.street || !order.pickUpAddress.floor || !order.pickUpAddress.district || !order.pickUpAddress}
+                                            onClick={()=>{
+                                                props.setOrder(order);
+                                                props.nextStep();
+                                            }}
+                                        >
                                             Dalje
                                         </button>
                                     </div>
@@ -191,7 +194,12 @@ export const Shop = (props) => {
                                 <div className="col-12">
                                     <div className="adress">
                                         <label htmlFor="adresa">Adresa</label>
-                                        <input type="text" className="form-control tabs" id="adresa" placeholder="Ulica,broj,sprat" defaultValue={(order && order.deliveryAddress)? order.deliveryAddress.street : ""}/>
+                                        <input type="text" className="form-control tabs" id="adresa" placeholder="Ulica,broj,sprat" defaultValue={(order && order.deliveryAddress)? order.deliveryAddress.street : ""} onChange={(e) => {
+                                            setOrder({...order, deliveryAddress: {
+                                                ...order.deliveryAddress,
+                                                street: e.target.value
+                                            }})}}
+                                        />
                                     </div>
                                 </div>
                             </div>

@@ -1,16 +1,29 @@
-import React, { Suspense } from "react";
-import { connect } from "react-redux";
-import routes from "./routes/routes";
-import { HashRouter as BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import { createBrowserHistory } from "history";
-import './scss/bootstrap.css';
 import 'font-awesome/css/font-awesome.min.css';
+import { createBrowserHistory } from "history";
+import React, { Fragment, Suspense, useEffect } from "react";
+import { connect } from "react-redux";
+import { HashRouter as BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
+import './scss/bootstrap.css';
 import './App.scss';
+import { PageNotFound } from "./components/pageNotFound/PageNotFound";
+import { isLoggedIn } from "./helpers/authHelper";
+import { AccountLayout } from "./layouts/account-layout/AccountLayout";
 import { LayoutHome } from "./layouts/layout-home/LayoutHome";
 import { MainLayout } from "./layouts/main-layout/MainLayout";
-import { AccountLayout } from "./layouts/account-layout/AccountLayout";
-import { isLoggedIn } from "./helpers/authHelper";
-import { PageNotFound } from "./components/pageNotFound/PageNotFound";
+
+function ScrollToTop() {
+  const history = useHistory();
+  useEffect(() => {
+    const unlisten = history.listen(() => {
+      window.scrollTo(0, 0);
+    });
+    return () => {
+      unlisten();
+    }
+  }, []);
+
+  return (null);
+}
 
 function App() {
   const history = createBrowserHistory();
@@ -21,6 +34,8 @@ function App() {
     return (
       <Suspense fallback={loading()} history={history}>
         <BrowserRouter history={history}>
+        <Fragment>
+          <ScrollToTop />
           <Switch>
             <Route path="/" exact={true} component={LayoutHome} />
             <Route path="/page" component={MainLayout}/>
@@ -32,6 +47,7 @@ function App() {
               </MainLayout>
             </Route>
           </Switch>
+        </Fragment>
         </BrowserRouter>
       </Suspense>
     );

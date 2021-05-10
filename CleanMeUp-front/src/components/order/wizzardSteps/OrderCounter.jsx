@@ -29,7 +29,7 @@ const OrderCounter = ({ id, name, price, setOrder, order }) => {
         >
           -
         </button>
-        <button type="button" disabled className="btn transparent orderBtn">
+        <button type="button" disabled={count <= 0} className="btn orderBtn">
           {count}
         </button>
         <button

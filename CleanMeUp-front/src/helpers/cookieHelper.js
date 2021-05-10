@@ -4,7 +4,7 @@ export const saveAcceptCookie = () => {
     sessionStorage.setItem(storageKey, 'true');
 }
 
-export const noAcceptCookie = () => {
+export const saveNoAcceptCookie = () => {
     sessionStorage.setItem(storageKey, 'false');
 }
 

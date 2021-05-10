@@ -6,7 +6,7 @@ import { getUserError } from "../../../actions/userActions";
 import { getUser } from "../../../api/userApi";
 import { ErrorModal } from "../../../components/errorModal/ErrorModal";
 import { SuccessModal } from "../../../components/successModal/SuccessModal";
-import { getLoggedUser, isLoggedIn, storeLoggedUser } from "../../../helpers/authHelper";
+import { isLoggedIn, storeLoggedUser } from "../../../helpers/authHelper";
 import store from "../../../store";
 
 export const AppUser = ({nextStep}) => {
@@ -67,7 +67,7 @@ export const AppUser = ({nextStep}) => {
                     <tr>
                         <td>
                             <label htmlFor="vasasifra">Vaša Šifra</label>
-                            <input type="password" className="form-control tabs" id="vasasifra" onChange={(e) => {
+                            <input type="password" autoComplete="on" className="form-control tabs" id="vasasifra" onChange={(e) => {
                                 setUser({...user, password: e.target.value})
                             }}/>
                         </td>

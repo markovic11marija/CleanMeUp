@@ -47,7 +47,7 @@ export const AccountOrders = () => {
                         </div>
                         <div className="row order-info d-flex justify-content-around">
                             <div className="col-md-2 order-img">
-                                <img src={`${process.env.PUBLIC_URL}/assets/img/washing-machine.png`}/>
+                                <img src={`${process.env.PUBLIC_URL}/assets/img/washing-machine.png`} alt="washing-machine"/>
                             </div>
                             <div className=" col-md-4 order-info-list">
                                 <ul className="list-unstyled" id="leftside-info">

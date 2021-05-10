@@ -89,7 +89,7 @@ export const Register = ({nextStep, previousStep}) => {
                                                 <tr>
                                                     <td>
                                                         <label htmlFor="vasasifra">Vaša Šifra</label>
-                                                        <input type="password" required className="form-control tabs" name="vasasifra" onChange={(e)=>{
+                                                        <input type="password" autoComplete="on" required className="form-control tabs" name="vasasifra" onChange={(e)=>{
                                                             if(e.target.value.length > 8 && e.target.value.match(/^.*[A-Z]+.*$/)){
                                                                 setUser({...user, password: e.target.value});
                                                                 e.target.setCustomValidity("");
@@ -109,7 +109,7 @@ export const Register = ({nextStep, previousStep}) => {
                                                 <tr className="re-password">
                                                     <td>
                                                         <label htmlFor="ponovite">Ponovite Šifru</label>
-                                                        <input type="password" required className="form-control tabs" name="ponovite" onChange={(e)=>{
+                                                        <input type="password" autoComplete="on" required className="form-control tabs" name="ponovite" onChange={(e)=>{
                                                             if(e.target.value !== user.password){
                                                                 e.target.setCustomValidity("Šifre se ne poklapaju.");
                                                             } else {

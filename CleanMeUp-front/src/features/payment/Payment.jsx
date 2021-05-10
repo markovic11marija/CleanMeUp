@@ -33,7 +33,6 @@ export const Payment = (props) => {
     }, [props]);
 
     useEffect(() => {
-        console.log('insertedOrderId',orderId);
         if(orderId) {
             setOrder({...order, id: orderId});
             if(pay) {
@@ -45,7 +44,7 @@ export const Payment = (props) => {
                 updatePaymentType(orderId);
             }
         }
-    }, [orderId]);
+    }, [orderId, pay, order]);
 
     useEffect(()=> {
         if(paymentType) {

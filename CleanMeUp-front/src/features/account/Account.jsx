@@ -85,7 +85,7 @@ export const Account = () => {
                                         <tr>
                                             <td className="vasa-sifra">
                                                 <label htmlFor="vasasifra">Vaša Šifra</label>
-                                                <input type="password" className="form-control tabs" id="vasasifra" onChange={(e)=> {
+                                                <input type="password" autoComplete="on" className="form-control tabs" id="vasasifra" onChange={(e)=> {
                                                     setUser({...user, password: e.target.value})
                                                 }}/>
                                             </td>
@@ -93,7 +93,7 @@ export const Account = () => {
                                         <tr className="re-password">
                                             <td>
                                                 <label htmlFor="ponovite">Ponovite Šifru</label>
-                                                <input type="password" className="form-control tabs" id="ponovite"  onChange={(e)=>{
+                                                <input type="password" autoComplete="on" className="form-control tabs" id="ponovite"  onChange={(e)=>{
                                                     if(e.target.value !== user.password){
                                                         e.target.setCustomValidity("Šifre se ne poklapaju.");
                                                     } else {

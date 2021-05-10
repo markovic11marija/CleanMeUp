@@ -1,12 +1,14 @@
 import React from "react";
-import { isAcceptedCookie, saveAcceptCookie } from "../../helpers/cookieHelper";
+import { isAcceptedCookie, saveAcceptCookie, saveNoAcceptCookie } from "../../helpers/cookieHelper";
 
 export const Sticky = () => {
     const acceptCookie = () => {
         saveAcceptCookie();
+        window.location.reload();
     }
     const noAcceptCookie = () => {
-        noAcceptCookie();
+        saveNoAcceptCookie();
+        window.location.reload();
     }
     return (
         <>

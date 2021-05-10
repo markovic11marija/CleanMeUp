@@ -15,7 +15,7 @@ export const Addresses = ({user, address, setAddress}) => {
                         </div>
                         <div className="col-auto">
                             <label htmlFor="sprat">Sprat</label>
-                            <input type="number" className="form-control tabs" id="sprat" placeholder="-" defaultValue={user.address.floor} onChange={(e)=>{
+                            <input type="number" min="0" className="form-control tabs" id="sprat" placeholder="-" defaultValue={user.address.floor} onChange={(e)=>{
                                 setAddress({...address, floor: e.target.value})
                             }}/>
                         </div>

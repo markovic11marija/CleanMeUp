@@ -95,7 +95,7 @@ const OrderDetails = (props) => {
                               if(e.target.checked) {
                                 setOrder({...order, services: [...order.services, service]})
                               } else {
-                                setOrder({...order, services: [...order.services.filter(x=> x.id != service.id)]})
+                                setOrder({...order, services: [...order.services.filter(x=> x.id !== service.id)]})
                               }
                             }}/>
                             <span className="checkmark"></span>
