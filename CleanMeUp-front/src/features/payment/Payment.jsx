@@ -15,36 +15,37 @@ export const Payment = (props) => {
     
     const [open, setOpen] = useState(false);
     const [order, setOrder] = useState({});
+    const [orderedId, setOrderedId] = useState(null);
     const [pay, setPay] = useState(false);
     const [amount, setAmount] = useState();
 
     useEffect(() => {
         if(props.order) {
+            console.log('here',props.order)
           setOrder(props.order);
-        }
-      }, [props.order]);
 
-    useEffect(() => {
-        let result = 0;
-        props.order.items.forEach((item) => {
-            result += item.price;
-        });
-        setAmount(result);
-    }, [props]);
+           let result = 0;
+            props.order.items.forEach((item) => {
+                result += item.price;
+            });
+            console.log(props.order.items,result);
+            setAmount(result);
+        }
+      }, [props]);
 
     useEffect(() => {
         if(orderId) {
-            setOrder({...order, id: orderId});
+            setOrderedId(orderId);
             if(pay) {
                 setTimeout(() => {
                         paymentForm.current.submit();
                     
-                }, 500);
+                }, 2000);
             } else {
                 updatePaymentType(orderId);
             }
         }
-    }, [orderId, pay, order]);
+    }, [orderId, pay]);
 
     useEffect(()=> {
         if(paymentType) {
@@ -57,8 +58,7 @@ export const Payment = (props) => {
     }, [paymentType])
 
     const saveOrderAndGoToPayment = () => {
-        order.userId = getLoggedUserId();
-        postOrder(order);
+        postOrder({...order, userId: getLoggedUserId()});
     }
     return (
         <>
@@ -103,7 +103,7 @@ export const Payment = (props) => {
                                         </tr>
                                         <tr>
                                             <td id="btn-naruci" className="mt-3"> 
-                                            {order.id && (
+                                            {orderedId && (
                                                 <form ref={paymentForm} method="POST" action="https://ecg.test.upc.ua/rbrs/enter">
                                                     <input type="hidden" value="1" name="Version" />
                                                     <input type="hidden" value="1756104" name="MerchantID" />
@@ -111,7 +111,7 @@ export const Payment = (props) => {
                                                     <input type="hidden" value={`${amount}00`} name="TotalAmount" />
                                                     <input type="hidden" value="941" name="Currency" />
                                                     <input type="hidden" value="sr" name="locale" />
-                                                    <input type="hidden" defaultValue={order.id} name="OrderID" />
+                                                    <input type="hidden" defaultValue={orderedId} name="OrderID" />
                                                     
                                                     <input
                                                     type="hidden"
