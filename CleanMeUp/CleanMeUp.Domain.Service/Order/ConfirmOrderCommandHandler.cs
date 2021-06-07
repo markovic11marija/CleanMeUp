@@ -41,7 +41,7 @@ namespace CleanMeUp.Domain.Service.Order
             order.BankReferenceId = bankReference;
             order.Signature = request.Signature;
             order.Email = request.Email;
-            order.PaymentMethod = "Plaćeno korticom";
+            order.PaymentMethod = "Plaćeno karticom";
 
             _unitOfWork.SaveChanges();
 
