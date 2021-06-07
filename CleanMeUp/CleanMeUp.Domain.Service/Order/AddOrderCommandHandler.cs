@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CleanMeUp.Domain.Service
 {
-    public class AddOrderCommandHandler : IRequestHandler<AddOrderCommand, CommandResult<int>>
+    public class AddOrderCommandHandler : IRequestHandler<AddOrderCommand, CommandResult<IdentifierResponse>>
     {
         private readonly IRepository<Model.Order> _orderRepository;
         private readonly IRepository<User> _userRepository;
@@ -28,7 +28,7 @@ namespace CleanMeUp.Domain.Service
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<CommandResult<int>> Handle(AddOrderCommand request, CancellationToken cancellationToken)
+        public async Task<CommandResult<IdentifierResponse>> Handle(AddOrderCommand request, CancellationToken cancellationToken)
         {
             var deliveryAddress = new Address { Street = request.DeliveryAddress.Street, Floor = request.DeliveryAddress.Floor, Interphone = request.DeliveryAddress.Interphone, District = request.DeliveryAddress.District };
             var pickUpAddress = new Address { Street = request.PickUpAddress.Street, Floor = request.PickUpAddress.Floor, Interphone = request.PickUpAddress.Interphone, District = request.PickUpAddress.District };
@@ -53,7 +53,7 @@ namespace CleanMeUp.Domain.Service
                 _unitOfWork.SaveChanges();
             }
 
-            return await Task.FromResult(CommandResult<int>.Success(order.Id));
+            return await Task.FromResult(CommandResult<IdentifierResponse>.Success(new IdentifierResponse() { Id = order.Id }));
         }
     }
 }

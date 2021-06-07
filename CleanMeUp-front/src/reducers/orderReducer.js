@@ -48,7 +48,7 @@ export default (state = initialState, action) => {
     case actions.ORDER_POST_SUCCESS:
       return {
         ...state,
-        insertedOrderId: { status: LOADED, data: action.payload },
+        insertedOrderId: { status: LOADED, data: action.payload.id },
         updatedPaymentType: {status: PENDING, data: null},
       };
     case actions.ORDER_POST_ERROR:

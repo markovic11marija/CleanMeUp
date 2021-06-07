@@ -2,7 +2,7 @@
 
 namespace CleanMeUp.Domain.Service.Users
 {
-    public class AddUserAddressCommand : IRequest<CommandResult<int>>
+    public class AddUserAddressCommand : IRequest<CommandResult<IdentifierResponse>>
     {
         public int UserId { get; set; }
         public string Street { get; set; }

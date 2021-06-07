@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace CleanMeUp.Domain.Service
 {
-    public class AddOrderCommand : IRequest<CommandResult<int>>
+    public class AddOrderCommand : IRequest<CommandResult<IdentifierResponse>>
     {
         public IList<Item> Items { get; set; }
         public IList<OrderService> Services { get; set; }
