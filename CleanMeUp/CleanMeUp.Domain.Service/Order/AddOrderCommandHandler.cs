@@ -40,20 +40,25 @@ namespace CleanMeUp.Domain.Service
                 order.File = new File { FileInBytes = Encoding.ASCII.GetBytes(request.FileInBytes), Name = request.FileName };
             }
             _orderRepository.Add(order);
+            await _unitOfWork.SaveChangesAsync();
 
-            if(request.UserId != null)
+            if (request.UserId != null)
             {
                 order.User = _userRepository.FindById(request.UserId ?? 0);
             }
-            _unitOfWork.SaveChanges();
+            var success = await _unitOfWork.SaveChangesAsync();
 
-            if (request.UserId != null && request.UserId != 0)
+            if(success != 0)
             {
-                _userOrderRepository.Add(new UserOrder { UserId = request.UserId.Value, OrderId = order.Id });
-                _unitOfWork.SaveChanges();
+                if (request.UserId != null && request.UserId != 0)
+                {
+                    _userOrderRepository.Add(new UserOrder { UserId = request.UserId.Value, OrderId = order.Id });
+                    await _unitOfWork.SaveChangesAsync();
+                }
             }
+           
 
-            return await Task.FromResult(CommandResult<IdentifierResponse>.Success(new IdentifierResponse() { Id = order.Id }));
+            return await Task.FromResult(CommandResult<IdentifierResponse>.Success(new IdentifierResponse() { Id = order.Id, Success = success }));
         }
     }
 }

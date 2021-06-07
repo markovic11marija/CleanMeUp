@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace CleanMeUp.WebApi.Controllers
 {
     [Route("[controller]")]
-    [Produces("application/json")]
+    //[Produces("application/json")]
     [ApiController]
     public class OrderController : Controller
     {

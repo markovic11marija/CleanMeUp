@@ -7,5 +7,6 @@ namespace CleanMeUp.Domain.Service
     public class IdentifierResponse
     {
         public int Id { get; set; }
+        public int Success { get; set; }
     }
 }
