@@ -44,7 +44,7 @@ namespace CleanMeUp.WebApi.Controllers
 
         [HttpPost]
         [Route("insert")]
-        public async Task<ActionResult<CommandResult<int>>> Add([FromBody]AddOrderCommand command)
+        public async Task<ActionResult<CommandResult<IdentifierResponse>>> Add([FromBody]AddOrderCommand command)
         {
             var result = await _mediator.Send(command);
 
