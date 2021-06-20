@@ -16,14 +16,12 @@ namespace CleanMeUp.Domain.Service
     {
         private readonly IRepository<Model.Order> _orderRepository;
         private readonly IRepository<User> _userRepository;
-        private readonly IRepository<UserOrder> _userOrderRepository;
 
         private readonly IUnitOfWork _unitOfWork;
 
-        public AddOrderCommandHandler(IRepository<Model.Order> orderRepository, IRepository<User> userRepository, IRepository<UserOrder> userOrderRepository, IUnitOfWork unitOfWork)
+        public AddOrderCommandHandler(IRepository<Model.Order> orderRepository, IRepository<User> userRepository, IUnitOfWork unitOfWork)
         {
             _orderRepository = orderRepository;
-            _userOrderRepository = userOrderRepository;
             _userRepository = userRepository;
             _unitOfWork = unitOfWork;
         }
@@ -44,19 +42,9 @@ namespace CleanMeUp.Domain.Service
 
             if (request.UserId != null)
             {
-                order.User = _userRepository.FindById(request.UserId ?? 0);
+                order.UserId = request.UserId.ToString();
             }
             var success = await _unitOfWork.SaveChangesAsync();
-
-            if(success != 0)
-            {
-                if (request.UserId != null && request.UserId != 0)
-                {
-                    _userOrderRepository.Add(new UserOrder { UserId = request.UserId.Value, OrderId = order.Id });
-                    await _unitOfWork.SaveChangesAsync();
-                }
-            }
-           
 
             return await Task.FromResult(CommandResult<IdentifierResponse>.Success(new IdentifierResponse() { Id = order.Id, Success = success }));
         }

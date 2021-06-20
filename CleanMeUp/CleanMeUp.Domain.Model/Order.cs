@@ -20,7 +20,7 @@ namespace CleanMeUp.Domain.Model
         public string DeliveryNote { get; set; }
         public string PaymentMethod { get; set; }
         public File File { get; set; }
-        public User User { get; set; }
+        public string UserId { get; set; }
 
         public string ReturnItems() {
             var items = "";

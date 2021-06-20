@@ -5,6 +5,6 @@ namespace CleanMeUp.Domain.Service.Order
 {
     public class GetOrderByUserIdQuery : IRequest<CommandResult<List<OrderData>>>
     {
-        public int UserId { get; set; }
+        public string UserId { get; set; }
     }
 }

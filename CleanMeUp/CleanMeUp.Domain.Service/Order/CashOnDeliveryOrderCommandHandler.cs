@@ -39,8 +39,11 @@ namespace CleanMeUp.Domain.Service.Order
             var sendGrid = new SendGridService(order, _configuration);
             var success = await sendGrid.SendMailAsync();
 
-            order.File.Name = null;
-            order.File.FileInBytes = null;
+            if (order.File != null)
+            {
+                order.File.Name = null;
+                order.File.FileInBytes = null;
+            }
 
             _unitOfWork.SaveChanges();
 

@@ -13,7 +13,7 @@ namespace CleanMeUp.Domain.Service
         public AddressModel PickUpAddress { get; set; }
         public AddressModel DeliveryAddress { get; set; }
         public string Phone { get; set; }
-        public int? UserId { get; set; }
+        public string UserId { get; set; }
         public string Note { get; set; }
         public string DeliveryNote { get; set; }
         public string FileName { get; set; }

@@ -23,7 +23,8 @@ export const Social = () => {
                         }}/>
                         <span className="d-none" ref={facebook}>
                             <FacebookLogin
-                                appId="2019653678271081"
+                                appId="262068492341413"
+                                key="9ff5f6770dfdea3a61d13ba304445e03"
                                 autoLoad={false}
                                 fields="name,email,picture"
                                 callback={responseFacebook}

@@ -4,14 +4,16 @@ using CleanMeUp.Infrastructure.Data.Ef;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
 {
     [DbContext(typeof(CleanMeUpDbContext))]
-    partial class CleanMeUpDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210620192348_UserIdNoRelationBecauseFacebookAccounts")]
+    partial class UserIdNoRelationBecauseFacebookAccounts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -252,6 +254,24 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.ToTable("User");
                 });
 
+            modelBuilder.Entity("CleanMeUp.Domain.Model.UserOrder", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "OrderId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("UserOrder");
+                });
+
             modelBuilder.Entity("CleanMeUp.Domain.Model.Item", b =>
                 {
                     b.HasOne("CleanMeUp.Domain.Model.Order", null)
@@ -290,6 +310,21 @@ namespace CleanMeUp.Infrastructure.Data.Ef.Migrations
                     b.HasOne("CleanMeUp.Domain.Model.Address", "Address")
                         .WithMany()
                         .HasForeignKey("AddressId");
+                });
+
+            modelBuilder.Entity("CleanMeUp.Domain.Model.UserOrder", b =>
+                {
+                    b.HasOne("CleanMeUp.Domain.Model.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CleanMeUp.Domain.Model.User", "User")
+                        .WithMany("UserOrders")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

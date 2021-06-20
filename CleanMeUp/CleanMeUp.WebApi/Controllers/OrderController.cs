@@ -37,7 +37,7 @@ namespace CleanMeUp.WebApi.Controllers
 
         [HttpGet]
         [Route("by-user-id/{id}")]
-        public async Task<ActionResult<CommandResult<OrderData>>> GetByUserId(int id)
+        public async Task<ActionResult<CommandResult<OrderData>>> GetByUserId(string id)
         {
             return Ok(await _mediator.Send(new GetOrderByUserIdQuery { UserId = id}));
         }

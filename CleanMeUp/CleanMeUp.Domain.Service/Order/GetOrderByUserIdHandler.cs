@@ -20,7 +20,7 @@ namespace CleanMeUp.Domain.Service.Order
 
         public async Task<CommandResult<List<OrderData>>> Handle(GetOrderByUserIdQuery request, CancellationToken cancellationToken)
         {
-            var orders = _orderRepository.QueryAllIncluding(x => x.User).Where(x=> x.User.Id == request.UserId).ToList();
+            var orders = _orderRepository.QueryAll().Where(x=> x.UserId == request.UserId.ToString()).ToList();
             var response = orders.Select(x => new OrderData {
                 Id = x.Id,
                 DateCreated = x.DateCreated

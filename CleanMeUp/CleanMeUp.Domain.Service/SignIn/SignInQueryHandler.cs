@@ -11,12 +11,10 @@ namespace CleanMeUp.Domain.Service
     public class SignInQueryHandler : IRequestHandler<SignInQuery, CommandResult<UserData>>
     {
         private readonly IRepository<User> _userRepository; 
-        private readonly IRepository<UserOrder> _userorderRepository;
 
-        public SignInQueryHandler(IRepository<User> userRepository, IRepository<UserOrder> userorderRepository)
+        public SignInQueryHandler(IRepository<User> userRepository)
         {
             _userRepository = userRepository;
-            _userorderRepository = userorderRepository;
         }
 
         public async Task<CommandResult<UserData>> Handle(SignInQuery request, CancellationToken cancellationToken)
