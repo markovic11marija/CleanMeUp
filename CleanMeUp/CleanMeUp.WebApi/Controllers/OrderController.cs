@@ -68,6 +68,18 @@ namespace CleanMeUp.WebApi.Controllers
         }
 
         [HttpPost]
+        [Route("notify")]
+        public async Task<ActionResult<CommandResult<CommandEmptyResult>>> NotifyOrder([FromForm]NotifyOrderCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            if (result.IsSuccess)
+                return Ok(result.Payload);
+
+            return BadRequest(result.FailureReason);
+        }
+
+        [HttpPost]
         [Route("cash-on-delivery")]
         public async Task<ActionResult<CommandResult<CommandEmptyResult>>> CashOnDeliveryOrder([FromBody] CashOnDeliveryOrderCommand command)
         {
