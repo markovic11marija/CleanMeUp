@@ -104,10 +104,10 @@ export const Payment = (props) => {
                                         <tr>
                                             <td id="btn-naruci" className="mt-3"> 
                                             {orderedId && (
-                                                <form ref={paymentForm} method="POST" action="https://ecg.test.upc.ua/rbrs/enter">
+                                                <form ref={paymentForm} method="POST" action="https://ecommerce.raiffeisenbank.rs/rbrs/enter">
                                                     <input type="hidden" value="1" name="Version" />
-                                                    <input type="hidden" value="1756104" name="MerchantID" />
-                                                    <input type="hidden" value="E7883944" name="TerminalID" />
+                                                    <input type="hidden" value="658003149247FFB" name="MerchantID" />
+                                                    <input type="hidden" value="E7883944" name="9247001B" />
                                                     <input type="hidden" value={`${amount}00`} name="TotalAmount" />
                                                     <input type="hidden" value="941" name="Currency" />
                                                     <input type="hidden" value="sr" name="locale" />
