@@ -66,7 +66,7 @@ export const Shop = (props) => {
                             <div className="row ">
                                 <div className="col-12 d-flex flex-wrap">
                                     <div className="street">
-                                        <label htmlFor="vasaadresa">Ulica i Broj</label>
+                                        <label htmlFor="vasaadresa">Ulica i Broj:</label>
                                         <input type="text" className="form-control tabs" id="ulicabroj" placeholder="" defaultValue={order && order.pickUpAddress ? order.pickUpAddress.street : ""} onChange={(e) => {
                                             setOrder({...order, pickUpAddress: {
                                                 ...order.pickUpAddress,
@@ -76,7 +76,7 @@ export const Shop = (props) => {
                                     </div>
 
                                     <div className="floor ml-3">
-                                        <label htmlFor="sprat">Sprat</label>
+                                        <label htmlFor="sprat">Sprat:</label>
                                         <input type="number" min="0" className="form-control tabs" id="sprat" placeholder="-" defaultValue={order && order.pickUpAddress ? order.pickUpAddress.floor : ""} onChange={(e) => {
                                             setOrder({...order, pickUpAddress: {
                                                 ...order.pickUpAddress,
@@ -151,7 +151,7 @@ export const Shop = (props) => {
                                                     </label>
                                                 </li>
                                                 <li>
-                                                    <label className="checkmark-container">Ista adresa je i za dostavu
+                                                <label className="checkmark-container">Upotrebiti istu adresu i za dostavu garderobe
                                                         <input type="checkbox" onChange={(e)=>{
                                                             if(e.target.checked){
                                                                 setOrder({...order, deliveryAddress: {

@@ -5,19 +5,19 @@ export const Question = () => {
     const questions = [
         {
             text: "Koliko koštaju usluge pranja i peglanja?",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sit magnam velit id corrupti minima sint quae dicta iste quibusdam fugit vel distinctio est perspiciatis, ullam odit accusantium modi corporis!"
+            description: "Pogledajte cenovnik na sajtu, ili na nasim facebook i instagram stranicama. Ukoliko imate pitanja slobodno nas kontaktirajte!"
         },
         {
             text: "Koji je rok za vraćanje odeće?",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sit magnam velit id corrupti minima sint quae dicta iste quibusdam fugit vel distinctio est perspiciatis, ullam odit accusantium modi corporis!"
+            description: "Zavisi od vrste čišćenja, uglavnom 72h od preuzimanja."
         },
         {
             text: "Kako mogu da platim Vaše usluge?",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sit magnam velit id corrupti minima sint quae dicta iste quibusdam fugit vel distinctio est perspiciatis, ullam odit accusantium modi corporis!"
+            description: "Možete da platite online putem sajta ili prilikom dostave na adresu gotovinom."
         },
         {
-            text: "Koliko koštaju usluge pranja i peglanja?",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sit magnam velit id corrupti minima sint quae dicta iste quibusdam fugit vel distinctio est perspiciatis, ullam odit accusantium modi corporis!"
+            text: "Da li radimo dostavu i kako ista funkcioniše?",
+            description: "BESPLATNA KUĆNA DOSTAVA! U procesu usluge koju pružamo je preuzimanje Vaše robe sa kućne adrese. Time ćete uštedeti dragoceno vreme koje bi u slučaju donošenja veša kod nas ili bilo gde drugde, proveli u prevozu. Stoga ne treba posebno pominjati uštedu nastalu ovim putem. Naši vozači će se naći na Vašoj adresi veoma brzo nakon dogovora i poštedeti Vas suvišnog posla (ponuda važi za račune preko 999 din)."
         }
     ]
     return (
