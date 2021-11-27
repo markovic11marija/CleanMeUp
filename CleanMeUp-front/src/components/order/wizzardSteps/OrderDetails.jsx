@@ -67,7 +67,7 @@ const OrderDetails = (props) => {
             <div className="col-7 mb-5">
               <div className="right-header">
                   <h4>Detalji porudžbine</h4>
-                  <h5 className="mt-5 font-weight-bold">Izaberite garderobu koja je potrebna da Vam se očisti</h5>
+                  <h5 className="mt-5 font-weight-bold">Izaberite odevni predmet na kojem je potrebno izvršiti uslugu hemijskog čišćenja</h5>
               </div>    
               <div className="right-form-data">
                   <div className="row justify-content-between">
@@ -85,7 +85,7 @@ const OrderDetails = (props) => {
                     })}
                   </div>
                   <div className="mt-5">
-                    <h5 className="font-weight-bold">Usluga koju želite</h5>
+                    <h5 className="font-weight-bold">Usluga koju želite:</h5>
                     <div className="row mt-5">
                       <div className="col-12 d-flex justify-content-between">
                         {serviceList.map(service => {
@@ -116,7 +116,8 @@ const OrderDetails = (props) => {
                     </div>
                   </div>
                   <div className="mt-5">
-                    <h5 className="font-weight-bold">Na šta da obratimo pažnju? Dodajte fotografiju fleke/oštećenja</h5>
+                    <h5 className="font-weight-bold">Na šta da obratimo pažnju?</h5> 
+                    <h5 className="font-weight-bold">Dodajte fotografiju fleke/oštećenja:</h5>
                     <div className="row mt-5">
                       <div className="col-4 d-flex justify-content-between">
                         <button type="button" className="btn btn-primary no-background white-button" onClick={() => {

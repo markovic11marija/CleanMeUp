@@ -17,13 +17,13 @@ export const PlaceOrder = () => {
         <div className="container d-flex align-items-center" id="header-wrapper">
             <div id="header-text-wrapper">
                 <div id="header-text">
-                    <h3>Mi brinemo o Vašoj odeći,<br/>da bi ste Vi mogli da se posvetite svemu ostalom.</h3>
-                    <p>Najsigurnije i najpovoljnije hemijsko čišćenje</p>
+                    <h3>Mi brinemo o Vašoj odeći,<br/>da biste Vi mogli da se posvetite svemu ostalom!</h3>
+                    <p>Uz pomoc najsavremenijih mašina vršimo najbrže i najsigurnije hemijsko čišćenje!</p>
                 </div>
                 <div id="header-form">
                     <form className="row g-3">
                         <div className="col-auto">
-                            <label htmlFor="vasaadresa">Ulica i Broj</label>
+                            <label htmlFor="vasaadresa">Ulica i Broj:</label>
                             <input type="text" className="form-control tabs" id="ulicabroj" placeholder="" onChange={(e) => {
                                 setOrder({...order, pickUpAddress: {
                                     ...order.pickUpAddress,
@@ -32,7 +32,7 @@ export const PlaceOrder = () => {
                             }}/>
                         </div>
                         <div className="col-auto">
-                            <label htmlFor="sprat">Sprat</label>
+                            <label htmlFor="sprat">Sprat:</label>
                             <input type="number" min="0" className="form-control tabs" id="sprat" placeholder="-" onChange={(e) => {
                                 setOrder({...order, pickUpAddress: {
                                     ...order.pickUpAddress,
@@ -41,7 +41,7 @@ export const PlaceOrder = () => {
                             }}/>
                         </div>
                         <div className="col-auto">
-                            <label htmlFor="interfon">Interfon</label>
+                            <label htmlFor="interfon">Interfon:</label>
                             <input type="text" className="form-control tabs" id="interfon" placeholder="-" onChange={(e) => {
                                 setOrder({...order, pickUpAddress: {
                                     ...order.pickUpAddress,
@@ -50,7 +50,7 @@ export const PlaceOrder = () => {
                             }}/>
                         </div>
                         <div className="col-auto">
-                            <label htmlFor="opstina">Opština</label>
+                            <label htmlFor="opstina">Opština:</label>
                             <select className="form-control tabs" id="opstina" onChange={(e) => {
                                 setOrder({...order, pickUpAddress: {
                                     ...order.pickUpAddress,
@@ -71,7 +71,7 @@ export const PlaceOrder = () => {
                         </div>
 
                         <div className="col-auto">
-                            <label htmlFor="brojtelefona" className="visually-hidden">Broj Telefona</label>
+                            <label htmlFor="brojtelefona" className="visually-hidden">Broj Telefona:</label>
                             <input type="number" min="0" className="form-control tabs" id="brojtelefona" placeholder="+381 XX XXX XXX" onChange={(e) => {
                                 setOrder({...order, phone: e.target.value })
                             }}/>

@@ -12,7 +12,7 @@ export const Services = () => {
                                 <img src="assets/img/truck.png" alt="truck" />
                             </div>
                             <div className="services-text">
-                                <p className="text-center">Popunite formu ili nas pozovite i javite nam gde da pokupimo i gde da dostavimo garderobu, kao i koju od naših usluga želite.</p>
+                            <p className="text-center">Popunite formu ili nas pozovite i navedite gde da preuzmemo i kasnije dostavimo Vašu garderobu.</p>
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@ export const Services = () => {
                             <div className="services-img text-center">
                                 <img src="assets/img/clothes.png" alt="clothes" />
                             </div>
-                            <p className="text-center">Nakon dostave, Vaša odeća je oprana i opeglana i spremna za nošenje.</p>
+                            <p className="text-center">Nakon izvršene usluge CleanMeUP hemijskog čišćenja, Vaša odeća je oprana, opeglana i spremna za nošenje.</p>
                         </div>
                     </div>
                 </div>
