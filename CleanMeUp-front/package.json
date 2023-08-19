@@ -17,6 +17,7 @@
     "node-sass": "^4.14.1",
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.3",
+    "react-burger-menu": "^2.7.1",
     "react-dom": "^16.14.0",
     "react-facebook-login": "^4.1.1",
     "react-instagram-login": "^1.4.0",
@@ -24,6 +25,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.0.1",
     "react-step-wizard": "^5.3.5",
+    "react-table": "^7.8.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "sass": "^1.32.8",
@@ -49,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-table": "^7.7.14"
   }
 }

@@ -18,30 +18,15 @@ export const Social = () => {
             <div id="social-icon">
                 <ul className="list-unstyled d-flex justify-content-end align-items-center">
                     <li>
-                        <img src={`${process.env.PUBLIC_URL}/assets/img/facebook.png`} alt="facebook" className="cursor-pointer" onClick={() => {
-                            facebook.current.querySelector("button").click();
-                        }}/>
-                        <span className="d-none" ref={facebook}>
-                            <FacebookLogin
-                                appId="262068492341413"
-                                key="9ff5f6770dfdea3a61d13ba304445e03"
-                                autoLoad={false}
-                                fields="name,email,picture"
-                                callback={responseFacebook}
-                            />
-                        </span>
+                    <a href="https://www.facebook.com/cleanmeup.rs/" target="_blank" rel="noopener noreferrer">
+                        <img src={`${process.env.PUBLIC_URL}/assets/img/facebook-new.png`} alt="facebook" className="cursor-pointer"/>
+                        </a>
                         
                     </li>
                     <li>
-                        <img className="cursor-pointer" src={`${process.env.PUBLIC_URL}/assets/img/linkedin.png`} alt="linkdin" onClick={() => {
-                            instagram.current.querySelector("button").click();
-                        }}/>
-                        <span className="d-none" ref={instagram}>
-                            <InstagramLogin
-                                clientId="5fd2f11482844c5eba963747a5f34556"
-                                onSuccess={responseInstagram}
-                            />
-                        </span>
+                    <a href="https://www.instagram.com/cleanmeup.rs/" target="_blank" rel="noopener noreferrer">
+                        <img className="cursor-pointer" src={`${process.env.PUBLIC_URL}/assets/img/instagram-new.png`} alt="instagram"/>
+                        </a>
                     </li>
                 </ul>
             </div>

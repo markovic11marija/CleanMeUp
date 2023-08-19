@@ -7,6 +7,7 @@ import { Login } from "../../../features/login/Login";
 import { Register } from "../../../features/register/Register";
 import { Payment } from "../../../features/payment/Payment";
 import { Shop } from "../../../features/shop/Shop.jsx";
+import PriceList from "../../../features/priceList/PriceList";
 
 export const MainHeader = ({children}) => {
     const  { path } = useRouteMatch();
@@ -18,6 +19,7 @@ export const MainHeader = ({children}) => {
                 {path.includes('page') && (
                 <>
                     <Route path={`${path}/contact`}  component={Contact} />
+                    <Route path={`${path}/prices`}  component={PriceList} />
                     <Route path={`${path}/register`} component={Register} />
                     <Route path={`${path}/payment`} component={Payment} />
                     <Route path={`${path}/shop`} component={Shop} />

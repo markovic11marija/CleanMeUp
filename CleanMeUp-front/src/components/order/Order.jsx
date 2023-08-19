@@ -22,7 +22,7 @@ const Order = () => {
 
   return (
     <>
-      <div className="image">
+      <div className="image" style={{zIndex: '-1'}}>
         <div className="cardContainer transparent">
           <StepWizard>
             <OrderDetails setOrder={setOrder} order={order} />

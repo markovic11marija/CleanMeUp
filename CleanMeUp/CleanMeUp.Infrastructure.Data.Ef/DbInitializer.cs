@@ -8,7 +8,7 @@ namespace CleanMeUp.Infrastructure.Data.Ef
     {
         public static void Initialize(CleanMeUpDbContext context)
         {
-            context.Database.Migrate();
+            // context.Database.Migrate();
             context.SaveChanges();
         }
     }
